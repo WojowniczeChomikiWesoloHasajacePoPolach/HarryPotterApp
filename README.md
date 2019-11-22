@@ -2,4 +2,5 @@
 
 Signatures:
 1. Witold Sterna
-2. Grafik no nieee.
+2. Kamil Zasada
+3. Grafik z przymusu

@@ -1,0 +1,203 @@
+@font-face {
+    font-family: Harry;
+    src: url("images/Parry\ Hotter.ttf");
+  }
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing: border-box;
+    font-family: "Harry";
+    color:rgb(245, 248, 71);
+}
+html{
+    font-size:0.7vw;
+}
+a{
+    color:#EFF24E;
+    text-decoration:none;
+    font-size:2rem;
+}
+body {
+    background-image: url("images/f9d7af29e8b87e7bdbc81609503036d1.jpg");
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: bottom;
+}
+main{
+    position:relative;
+    height:100vh;
+}
+@media only screen and (min-width: 600px) {
+    main{
+    height:190vh;
+}
+}
+.main_feather, .main_book_shadow, .h_hogwart{
+    width:7vw;
+}
+
+nav{
+    position:relative;
+    width:100%;
+    z-index:1;
+    top:5%;
+}
+.main_button{
+    position:absolute;
+    top:30%;
+    left:5%;
+    width:20%;
+    z-index:1;
+}
+.main_button img:hover{
+        filter: drop-shadow(2px 2px 0 rgb(231, 108, 7))
+        drop-shadow(-2px 2px 0 rgb(223, 122, 6))
+        drop-shadow(2px -2px 0 white)
+        drop-shadow(-2px -2px 0 white);
+}
+.main_button h3{
+    position:absolute;
+    display:inline-block; 
+    font-size:4rem;
+    left:50%;
+    text-shadow:2px 2px 3px #FA6900;
+}
+
+.teach_spells{
+    position:absolute;
+    top:30%;
+    right:5%;
+    display:flex;
+    width:30%;
+    align-items:center;
+    justify-content:space-around;
+}
+.teach_spells a:hover>span{
+    filter: drop-shadow(1px 1px 0 rgb(231, 108, 7))
+    drop-shadow(-1px 1px 0 rgb(223, 122, 6))
+    drop-shadow(1px -1px 0 white)
+    drop-shadow(-1px -1px 0 white);
+}
+.teach_spells span{
+    position:absolute;
+    bottom:8%;
+    font-size:3rem;
+    text-shadow:2px 2px 3px #FA6900;
+}
+
+.teach_spells .teachers span {
+    right:67%;
+}
+.teach_spells .spells span {
+    right:17%;
+}
+
+
+header{
+    font-size:2.7rem;
+    position:relative;
+    text-align:center;
+    left:50%;
+    transform:translateX(-50%);
+    top:20%;
+    width:50%;
+}
+header span{
+    color:#FA6900;
+    font-weight:bold;
+}
+header h1{
+    text-shadow:3px 2px 3px rgb(0, 0, 0);
+    padding:2vw;
+    transition-duration:5s;
+}
+header h1:hover{
+    transform:scale(1.1);
+}
+@media only screen and (min-width:700px){
+    header h1:hover{
+        transform:scale(1.5);
+    }
+}
+
+header h3:first-of-type, header h3:nth-of-type(2){
+    margin:5vw 0;
+    text-shadow:3px 2px 5px rgb(0, 0, 0);
+}
+header h3:last-of-type{
+    margin-top:5vw 0;
+    text-shadow:3px 2px 3px rgb(0, 0, 0);
+}
+.herbs{
+    position:relative;
+    top:20%;
+    height:40vh;
+    font-size:2.3rem;
+    text-align:center;
+    text-shadow:3px 2px 3px rgb(0, 0, 0);
+}
+.her img:hover{
+    filter: drop-shadow(2px 2px 0 rgb(231, 108, 7))
+    drop-shadow(-2px 2px 0 rgb(223, 122, 6))
+    drop-shadow(2px -2px 0 white)
+    drop-shadow(-2px -2px 0 white);
+    transform:scale(1.1);
+}
+.herbs h3{
+    color:#D4E41D;
+    transition-duration:0.4s;
+}
+
+.her{
+    position:absolute;
+}
+.her img{
+    width:10vw;
+}
+.sl {
+    left:15%;
+    bottom:100%;
+}
+.sl a:hover~h3{
+    transform: scale(1.4);
+}
+
+.gr{
+    right:15%;
+    bottom:100%;
+}
+.gr a:hover~h3{
+    transform: scale(1.4);
+}
+.ra{
+    right:20%;
+    bottom:0;
+}
+.ra a:hover~h3{
+    transform: scale(1.4);
+}
+.hu{
+    left:20%;
+    bottom:0;
+}
+.hu a:hover~h3{
+    transform: scale(1.4);
+}
+.sorting_hat{
+    position:absolute;
+    top:25%;
+    left:50%;
+    transform: translateX(-50%);
+}
+.sorting_hat img{
+    width:7vw;
+}
+.sorting_hat img:hover{
+    filter: drop-shadow(2px 2px 0 rgb(231, 108, 7))
+    drop-shadow(-2px 2px 0 rgb(223, 122, 6))
+    drop-shadow(2px -2px 0 white)
+    drop-shadow(-2px -2px 0 white);
+    transform:scale(1.1);
+}
+

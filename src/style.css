@@ -39,17 +39,16 @@ main{
 
 nav{
     position:fixed;
-    height:25%;
     width:100%;
-    display:flex;
     z-index:1;
+    height:20%;
 }
 .main_button{
     position:absolute;
     top:30%;
     left:5%;
     width:20%;
-
+    z-index:1;
 }
 .main_button img:hover{
         filter: drop-shadow(2px 2px 0 rgb(231, 108, 7))
@@ -74,12 +73,11 @@ nav{
     align-items:center;
     justify-content:space-around;
 }
-.teach_spells img:hover{
-    filter: drop-shadow(2px 2px 0 rgb(231, 108, 7))
-    drop-shadow(-2px 2px 0 rgb(223, 122, 6))
-    drop-shadow(2px -2px 0 white)
-    drop-shadow(-2px -2px 0 white);
-    z-index:2;
+.teach_spells a:hover>span{
+    filter: drop-shadow(1px 1px 0 rgb(231, 108, 7))
+    drop-shadow(-1px 1px 0 rgb(223, 122, 6))
+    drop-shadow(1px -1px 0 white)
+    drop-shadow(-1px -1px 0 white);
 }
 .teach_spells span{
     position:absolute;
@@ -161,29 +159,29 @@ header h3:last-of-type{
     left:15%;
     bottom:100%;
 }
-.sl img:hover~h3{
-    transform: scale(1.2);
+.sl a:hover~h3{
+    transform: scale(1.4);
 }
 
 .gr{
     right:15%;
     bottom:100%;
 }
-.gr img:hover~h3{
+.gr a:hover~h3{
     transform: scale(1.4);
 }
 .ra{
     right:20%;
     bottom:0;
 }
-.ra img:hover~h3{
+.ra a:hover~h3{
     transform: scale(1.4);
 }
 .hu{
     left:20%;
     bottom:0;
 }
-.hu img:hover~h3{
+.hu a:hover~h3{
     transform: scale(1.4);
 }
 .sorting_hat{

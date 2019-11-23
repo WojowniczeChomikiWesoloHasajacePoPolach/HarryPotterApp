@@ -5,4 +5,5 @@ Signatures:
 2. Kamil Zasada
 3. Grafik z przymusu
 4. Piotr Szydłowski
-11. You Know Who
+5. Izabela Kasza
+6. Piotr Urbaniak

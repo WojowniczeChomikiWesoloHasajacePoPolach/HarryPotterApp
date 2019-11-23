@@ -6,3 +6,4 @@ Signatures:
 3. Grafik z przymusu
 4. Piotr Szydłowski
 5. Izabela Kasza
+6. Piotr Urbaniak

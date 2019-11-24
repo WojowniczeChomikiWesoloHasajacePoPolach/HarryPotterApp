@@ -55,6 +55,7 @@ nav{
         drop-shadow(-2px 2px 0 rgb(223, 122, 6))
         drop-shadow(2px -2px 0 white)
         drop-shadow(-2px -2px 0 white);
+        transform:scale(1.2);
 }
 .main_button h3{
     position:absolute;
@@ -78,6 +79,7 @@ nav{
     drop-shadow(-1px 1px 0 rgb(223, 122, 6))
     drop-shadow(1px -1px 0 white)
     drop-shadow(-1px -1px 0 white);
+    transform:scale(1.2);
 }
 .teach_spells span{
     position:absolute;
@@ -136,6 +138,10 @@ header h3:last-of-type{
     font-size:2.3rem;
     text-align:center;
     text-shadow:3px 2px 3px rgb(0, 0, 0);
+}
+.herbs img {
+    filter:drop-shadow(1px 2px 5px rgb(27, 27, 27))
+    drop-shadow(-2px 2px 3px rgb(17, 15, 15))
 }
 .her img:hover{
     filter: drop-shadow(2px 2px 0 rgb(231, 108, 7))
@@ -201,3 +207,64 @@ header h3:last-of-type{
     transform:scale(1.1);
 }
 
+.back_page{
+    position:absolute;
+    display:inline-block; 
+    font-size:4rem;
+    left:50%;
+    text-shadow:2px 2px 3px #FA6900;
+}
+.main_teachers{
+    position:relative;
+    height:100%;
+    font-size:4rem;
+    text-shadow:2px 2px 3px rgb(0, 0, 0);
+}
+.main_image{
+    position:absolute;
+    top:20%;
+    left:50%;
+    transform:translateX(-20%);
+    height:15vw;
+}
+.main_teachers h3{
+    position:absolute;
+    top:28%;
+    left:50%;
+    transform:translateX(-50%)
+}
+.main_teachers .scroll {
+    position:absolute;
+    top:45%;
+    height:50%;
+    z-index:-1;
+    left:50%;
+    transform:translateX(-50%);
+}
+.main_teachers h4{
+    position:absolute;
+    top:52%;
+    left:50%;
+    transform:translateX(-50%);
+    color:black;
+    text-shadow:none;
+}
+.herb_menu{
+    position:absolute;
+    top:50%;
+}
+.herb_menu img{
+    width:6vw;
+    margin-left:4vw;
+    filter:drop-shadow(1px 1px 3px rgb(255, 148, 7))
+    drop-shadow(-1px 1px 0 rgb(255, 0, 0))
+    drop-shadow(1px -1px 0 rgb(239, 255, 12))
+    drop-shadow(-1px -1px 0 rgb(206, 144, 11));
+}
+.herb_menu img:hover{
+    filter: drop-shadow(2px 2px 0 rgb(231, 108, 7))
+    drop-shadow(-2px 2px 0 rgb(223, 122, 6))
+    drop-shadow(2px -2px 0 white)
+    drop-shadow(-2px -2px 0 white);
+    transform:scale(1.2);
+}

@@ -59,25 +59,25 @@ function showAllProfesorsUsingApi(){
 
         }
         function getNameOfteachers(x){
-            for( i =0; i <= x.length; i++){
-             console.log(`${x[i].name} ${x[i].role}`);
+            for( i =0; i < x.length; i++){
+              function styleListOfTeachers (){
+             const li = document.createElement('li')
+             btn_teachers.style.display="none";
+             teachers_list.appendChild(li);
+             teachers_list.style.display="block";
+             li.innerHTML =`${x[i].name} ${x[i].role}`
             }
+            styleListOfTeachers();
+          }
       }
       getTeachers();
     }
 
-    function makeSomeMagic(){
-        const li = document.createElement('li')
-        const findLi = li.querySelector('li');
-        btn_teachers.style.display="none";
-        teachers_list.appendChild(li);
-        showAllProfesorsUsingApi();
-    }
     function checkedIfLoad(){
 
     }
 
 teach.addEventListener('click', teachersView);
 teach.addEventListener('click', resetLandingPage);
-btn_teachers.addEventListener('click', makeSomeMagic);
+btn_teachers.addEventListener('click', showAllProfesorsUsingApi);
 main_logo.addEventListener('click', checkedIfLoad);

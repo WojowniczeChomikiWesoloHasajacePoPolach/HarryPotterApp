@@ -222,28 +222,28 @@ header h3:last-of-type{
 }
 .main_image{
     position:absolute;
-    top:20%;
+    top:17%;
     left:50%;
     transform:translateX(-20%);
     height:15vw;
 }
 .main_teachers h3{
     position:absolute;
-    top:28%;
+    top:25%;
     left:50%;
     transform:translateX(-50%)
 }
 .main_teachers .scroll {
     position:absolute;
-    top:45%;
-    height:50%;
+    top:37%;
+    height:63%;
     z-index:-1;
     left:50%;
     transform:translateX(-50%);
 }
 .main_teachers h4{
     position:absolute;
-    top:52%;
+    top:39%;
     left:50%;
     transform:translateX(-50%);
     color:black;
@@ -273,7 +273,7 @@ header h3:last-of-type{
     background-color:transparent;
     outline:none;
     border:none;
-    font-size:3rem;
+    font-size:4rem;
     position:absolute;
     top:66%;
     left:50%;
@@ -289,12 +289,31 @@ header h3:last-of-type{
 
 }
 .teacher_list{
-    font-size:2rem;
+    font-size:1rem;
+    flex-direction:column;
+    justify-content:center;
+    width:100%;
+    align-items:center;
+    position:absolute;
+    top:52%;
 }
-teacher_li li{
-    display:grid;
-    grid-template-columns: 2;
-    grid-template-rows:1;
-    width:40%;
+.teacher_list li{
+    color:rgb(0, 0, 0);
+    list-style:none;
+}
+
+.teacher_list li:hover{
+    animation-name: cokolwiek;
+    animation-duration:1.5s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+}
+@keyframes cokolwiek{
+    0% {
+        transform: scale(1);
+    }
+    100%{
+        transform: scale(3.5);
+    }
 }
 

@@ -64,7 +64,7 @@ function showAllProfesorsUsingApi(){
              const li = document.createElement('li')
              btn_teachers.style.display="none";
              teachers_list.appendChild(li);
-             teachers_list.style.display="block";
+             teachers_list.style.display="flex";
              li.innerHTML =`${x[i].name} ${x[i].role}`
             }
             styleListOfTeachers();

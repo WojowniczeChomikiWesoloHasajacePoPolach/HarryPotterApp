@@ -256,10 +256,10 @@ header h3:last-of-type{
 .herb_menu img{
     width:6vw;
     margin-left:4vw;
-    filter:drop-shadow(1px 1px 3px rgb(255, 148, 7))
-    drop-shadow(-1px 1px 0 rgb(255, 0, 0))
-    drop-shadow(1px -1px 0 rgb(239, 255, 12))
-    drop-shadow(-1px -1px 0 rgb(206, 144, 11));
+    filter:drop-shadow(1px 1px 3px rgb(0, 0, 0))
+    drop-shadow(-1px 1px 0 rgb(255, 255, 255))
+    drop-shadow(1px -1px 0 rgb(255, 255, 255))
+    drop-shadow(-1px -1px 0 rgb(0, 0, 0));
 }
 .herb_menu img:hover{
     filter: drop-shadow(2px 2px 0 rgb(231, 108, 7))
@@ -267,4 +267,24 @@ header h3:last-of-type{
     drop-shadow(2px -2px 0 white)
     drop-shadow(-2px -2px 0 white);
     transform:scale(1.2);
+}
+
+.btn_teachers{
+    background-color:transparent;
+    outline:none;
+    border:none;
+    font-size:3rem;
+    position:absolute;
+    top:66%;
+    left:50%;
+    transform:translate(-50%);
+    color:black;
+}
+
+.btn_teachers:hover{
+    cursor:pointer;
+    filter:drop-shadow(2px 2px 0 rgb(245, 248, 71))
+    drop-shadow(-2px 2px 0 rgb(245, 248, 71))
+    drop-shadow(2px -2px 3px white);
+
 }

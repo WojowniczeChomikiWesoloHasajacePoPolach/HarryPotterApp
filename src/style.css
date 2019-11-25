@@ -55,6 +55,7 @@ nav{
         drop-shadow(-2px 2px 0 rgb(223, 122, 6))
         drop-shadow(2px -2px 0 white)
         drop-shadow(-2px -2px 0 white);
+        transform:scale(1.2);
 }
 .main_button h3{
     position:absolute;
@@ -78,6 +79,7 @@ nav{
     drop-shadow(-1px 1px 0 rgb(223, 122, 6))
     drop-shadow(1px -1px 0 white)
     drop-shadow(-1px -1px 0 white);
+    transform:scale(1.2);
 }
 .teach_spells span{
     position:absolute;
@@ -136,6 +138,10 @@ header h3:last-of-type{
     font-size:2.3rem;
     text-align:center;
     text-shadow:3px 2px 3px rgb(0, 0, 0);
+}
+.herbs img {
+    filter:drop-shadow(1px 2px 5px rgb(27, 27, 27))
+    drop-shadow(-2px 2px 3px rgb(17, 15, 15))
 }
 .her img:hover{
     filter: drop-shadow(2px 2px 0 rgb(231, 108, 7))
@@ -201,3 +207,122 @@ header h3:last-of-type{
     transform:scale(1.1);
 }
 
+.back_page{
+    position:absolute;
+    display:inline-block; 
+    font-size:4rem;
+    left:50%;
+    text-shadow:2px 2px 3px #FA6900;
+}
+.main_teachers, .main_spells{
+    position:relative;
+    height:100%;
+    font-size:4rem;
+    text-shadow:2px 2px 3px rgb(0, 0, 0);
+}
+.main_image{
+    position:absolute;
+    top:20%;
+    left:50%;
+    transform:translateX(-20%);
+    height:15vw;
+}
+.main_teachers h3, .main_spells h3{
+    position:absolute;
+    top:28%;
+    left:50%;
+    transform:translateX(-50%)
+}
+.main_teachers .scroll{
+    position:absolute;
+    top:45%;
+    height:50%;
+    z-index:-1;
+    left:50%;
+    transform:translateX(-50%);
+}
+.main_teachers h4{
+    position:absolute;
+    top:52%;
+    left:50%;
+    transform:translateX(-50%);
+    color:black;
+    text-shadow:none;
+}
+.herb_menu{
+    position:absolute;
+    top:50%;
+}
+.herb_menu img{
+    width:6vw;
+    margin-left:4vw;
+    filter:drop-shadow(1px 1px 3px rgb(0, 0, 0))
+    drop-shadow(-1px 1px 0 rgb(255, 255, 255))
+    drop-shadow(1px -1px 0 rgb(255, 255, 255))
+    drop-shadow(-1px -1px 0 rgb(0, 0, 0));
+}
+.herb_menu img:hover{
+    filter: drop-shadow(2px 2px 0 rgb(231, 108, 7))
+    drop-shadow(-2px 2px 0 rgb(223, 122, 6))
+    drop-shadow(2px -2px 0 white)
+    drop-shadow(-2px -2px 0 white);
+    transform:scale(1.2);
+}
+
+.btn_teachers{
+    background-color:transparent;
+    outline:none;
+    border:none;
+    font-size:3rem;
+    position:absolute;
+    top:66%;
+    left:50%;
+    transform:translate(-50%);
+    color:black;
+}
+
+.btn_teachers:hover, .btn_spells:hover{
+    cursor:pointer;
+    filter:drop-shadow(2px 2px 0 rgb(245, 248, 71))
+    drop-shadow(-2px 2px 0 rgb(245, 248, 71))
+    drop-shadow(2px -2px 3px white);
+
+}
+
+.main_spells_image{
+    position:absolute;
+    top:25%;
+    left:43%;
+    height:10vw;
+}
+
+.main_spells .book {
+    position:absolute;
+    top:25.5%;
+    width: 100%;
+    z-index:-1;
+    left:0%;
+}
+
+.main_spells h4{
+    position:absolute;
+    top:50%;
+    left:35%;
+    transform:translateX(-50%);
+    color:black;
+    text-shadow:none;
+    font-size: 3rem;
+}
+
+.btn_spells{
+    background-color:transparent;
+    outline:none;
+    border:none;
+    font-size:3rem;
+    position:absolute;
+    top:66%;
+    left:35%;
+    width: 30%;
+    transform:translate(-50%);
+    color:black;
+}

@@ -288,3 +288,13 @@ header h3:last-of-type{
     drop-shadow(2px -2px 3px white);
 
 }
+.teacher_list{
+    font-size:2rem;
+}
+teacher_li li{
+    display:grid;
+    grid-template-columns: 2;
+    grid-template-rows:1;
+    width:40%;
+}
+

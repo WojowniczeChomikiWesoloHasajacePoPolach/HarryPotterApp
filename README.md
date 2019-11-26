@@ -7,3 +7,4 @@ Signatures:
 4. Piotr Szydłowski
 5. Izabela Kasza
 6. Piotr Urbaniak
+7. Radosław Legieta

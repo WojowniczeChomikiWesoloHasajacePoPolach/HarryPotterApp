@@ -233,7 +233,7 @@ header h3:last-of-type{
     left:50%;
     transform:translateX(-50%)
 }
-.main_teachers .scroll{
+.main_teachers .scroll {
     position:absolute;
     top:45%;
     height:50%;
@@ -287,6 +287,71 @@ header h3:last-of-type{
     drop-shadow(-2px 2px 0 rgb(245, 248, 71))
     drop-shadow(2px -2px 3px white);
 
+}
+.teacher_list{
+    font-size:2rem;
+}
+teacher_li li{
+    display:grid;
+    grid-template-columns: 2;
+    grid-template-rows:1;
+    width:40%;
+}
+.main_house{
+    position:relative;
+    height:100%;
+    font-size:4rem;
+    text-shadow:2px 2px 3px rgb(0, 0, 0);
+}
+.main_house h3{
+    position:absolute;
+    top:30%;
+    left:49%;
+    transform:translateX(-50%)
+}
+.house_info{
+    display:flex;
+    position:absolute;
+    top: 40%;
+    left: 35%;
+    flex-wrap:wrap;
+}
+.house_info > div{
+    width:100%;
+}
+.house_herb{
+    position:absolute;
+    top:20%;
+    left:45%;
+    transform:translateX(-20%);
+    height:15vw;
+}
+.students img{
+    position: absolute;
+    top: 65%;
+    left: 5%;
+    transform: rotate(-30deg);
+    height: 25vw;
+}
+.students > div{
+    position: absolute;
+    top: 71%;
+    left: 20%;
+}
+
+.block_buttons{
+    display:flex;
+    position:absolute;
+    left: 60%;
+    top: 57%;
+    flex-wrap:wrap;
+}
+.block_buttons img{
+    height: 10vw;
+}
+.block_buttons > div {
+    width: 100%;
+    font-size: 4rem;
 }
 
 .main_spells_image{

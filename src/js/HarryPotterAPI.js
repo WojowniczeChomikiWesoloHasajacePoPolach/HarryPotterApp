@@ -1,3 +1,4 @@
+
 //funkcja wysyłająca zapytanie do API
 async function getResponse(URL) {
     let response;

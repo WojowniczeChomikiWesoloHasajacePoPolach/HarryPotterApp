@@ -15,15 +15,16 @@
                 <a href="#" class="back_page" style="display: none;"><h3>Back</h3></a>
             </div>
             <div class="teach_spells">
-                <a href="#" class="teachers"><img src="images/descarga.png" class="main_feather" alt="Blue Feather"><span>Teachers</span></a>
-                <a href="#" class="spells"><img src="images/book-of-shadows.png" class="main_book_shadow" alt="Spells Book"><span>Spells</span></a>
-                <div class = "herb_menu" style="display:none;">
-                    <a href="#"><img src="images/Slytherin_Crest.png" alt="Slytherin Herb" class="h_sl"></a>
-                    <a href="#"><img src="images/Gryffindor_ClearBG2.png" alt="Gryffindor Herb" class="h_gr"></a>
-                    <a href="#"><img src="images/RavenclawCrest.png" alt="RavenclasCrest" class="h_ra"></a>
-                    <a href="#"><img src="images/hufflepuff.png" alt="Hufflepuff" class="h_hu"></a>
+                    <a href="#" class="teachers"><img src="images/descarga.png" class="main_feather" alt="Blue Feather"><span>Teachers</span></a>
+                    <a href="#" class="spells"><img src="images/book-of-shadows.png" class="main_book_shadow" alt="Spells Book"><span>Spells</span></a>
+                    <div class = "herb_menu" style="display:none;">
+                        <a href="#"><img src="images/Slytherin_Crest.png" alt="Slytherin Herb" class="h_sl"></a>
+                        <a href="#"><img src="images/Gryffindor_ClearBG2.png" alt="Gryffindor Herb" class="h_gr"></a>
+                        <a href="#"><img src="images/RavenclawCrest.png" alt="RavenclasCrest" class="h_ra"></a>
+                        <a href="#"><img src="images/hufflepuff.png" alt="Hufflepuff" class="h_hu"></a>
+                    </div>
                 </div>
-            </div>            
+
         </nav>
         <header>
             <h1>Fan of Harry? Just try this!</h1>
@@ -53,12 +54,36 @@
             </div>
         </div>
         <div class= 'main_teachers'  style="display: none;">
-            <img class='main_image' src="images/descarga.png">
-            <h3>Teachers</h3>
-            <img class='scroll' src="images/scroll.png">
-            <h4>List of teachers</h4>
-            <button class="btn_teachers">Wanna see? Make a click!</button> 
-            <ul style="display:none;" class="teacher_list"></ul>
+        <img class='main_image' src="images/descarga.png">
+        <h3>Teachers</h3>
+        <img class='scroll' src="images/scroll.png">
+        <h4>List of teachers</h4>
+        <button class="btn_teachers">Wanna see? Make a click!</button> 
+        <ul style="display:none;" class="teacher_list"></ul>
+        </div>
+        <div class='main_house' style="display: none;">
+        <h3></h3>
+        <div class="house_info">
+            <div class="founder">Founder: <span></span></div>
+            <div class="head_house">Head Of House: <span></span></div>
+            <div class="house_ghost">House Ghost: <span></span></div>
+        </div>
+        <div class="house_buttons">
+            <div class="students">
+                <img src="images/Harry-Potter-Broom-Transparent-Background.png" alt="Broom">
+                <div>Students</div>
+            </div>
+            <div class="block_buttons">
+                <div class="ministry_of_magic">
+                    <div><img src= "images/snowy-owl-clipart-harry-potter-10.png">Ministry Of Magic</div>
+                </div>
+                <div class="order_of_the_phoenix">
+                    <div><img src= "images/Fenix_2.png">Order Of The Phoenix</div>
+                </div>
+                <div class="dumbledores_army">
+                    <div><img src= "images/Water_Magic_Wand.png">Dumbledore's Army</div>
+                </div>
+            </div>
         </div>
         <div class= 'main_spells'  style="display: none;">
             <img class='main_spells_image' src="images/book-of-shadows.png">
@@ -76,9 +101,11 @@
                 <button class='btn_spells_type' id='all'>All.....................................................151</button> 
             </div>
         </div>
+
     </main>
     <script src="js/HarryPotterAPI.js"></script>
     <script src="js/teachers.js"></script>
+    <script src="js/houseView.js"></script>
     <script src='js/spellsView.js'></script>
 </body>
 </html>

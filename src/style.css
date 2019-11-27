@@ -214,7 +214,7 @@ header h3:last-of-type{
     left:50%;
     text-shadow:2px 2px 3px #FA6900;
 }
-.main_teachers{
+.main_teachers, .main_spells{
     position:relative;
     height:100%;
     font-size:4rem;
@@ -227,7 +227,7 @@ header h3:last-of-type{
     transform:translateX(-20%);
     height:15vw;
 }
-.main_teachers h3{
+.main_teachers h3, .main_spells h3{
     position:absolute;
     top:28%;
     left:50%;
@@ -281,7 +281,7 @@ header h3:last-of-type{
     color:black;
 }
 
-.btn_teachers:hover{
+.btn_teachers:hover, .btn_spells:hover{
     cursor:pointer;
     filter:drop-shadow(2px 2px 0 rgb(245, 248, 71))
     drop-shadow(-2px 2px 0 rgb(245, 248, 71))
@@ -354,3 +354,69 @@ teacher_li li{
     font-size: 4rem;
 }
 
+.main_spells_image{
+    position:absolute;
+    top:25%;
+    left:43%;
+    height:10vw;
+}
+
+.main_spells .book {
+    position:absolute;
+    top:25.5%;
+    width: 100%;
+    z-index:-1;
+    left:0%;
+}
+
+.main_spells h4{
+    position:absolute;
+    top:50%;
+    left:35%;
+    transform:translateX(-50%);
+    color:black;
+    text-shadow:none;
+    font-size: 3rem;
+}
+
+.btn_spells{
+    background-color:transparent;
+    outline:none;
+    border:none;
+    font-size:3rem;
+    position:absolute;
+    top:66%;
+    left:35%;
+    width: 28%;
+    transform:translate(-50%);
+    color:black;
+}
+
+.spells_types_list{
+    position:absolute;
+    top:56%;
+    left:22%;
+    color:black;
+    text-shadow:none;
+    font-size: 2.5rem;
+    display: flex;
+    flex-direction: column;
+    height: 30%;
+    width: 26%;
+}
+
+.btn_spells_type{
+    background-color:transparent;
+    outline:none;
+    border:none;
+    color:black;
+    font-size: 2rem;
+    flex: 1;
+}
+
+.btn_spells_type:hover{
+    cursor:pointer;
+    filter:drop-shadow(2px 2px 0 rgb(245, 248, 71))
+    drop-shadow(-2px 2px 0 rgb(245, 248, 71))
+    drop-shadow(2px -2px 3px white);
+}

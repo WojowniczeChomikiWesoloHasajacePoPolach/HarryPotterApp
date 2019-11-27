@@ -8,3 +8,4 @@ Signatures:
 5. Izabela Kasza
 6. Piotr Urbaniak
 7. Radosław Legieta
+8. Asia Dymarczyk

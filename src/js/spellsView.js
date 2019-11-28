@@ -12,6 +12,7 @@ function spellsView(){
     back_page.style.display = 'inline-block';
     herb_menu.style.display = 'block';
     teach_spells.style.width='50%';
+    back.push('spells')
 };
 
 function displaySpellsList() {

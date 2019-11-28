@@ -28,7 +28,9 @@ spells.style.display ="none"
 teach.style.display="none"
 header.style.display = 'none'
 herbs.style.display = 'none'
+main_house.style.display = 'none'
 main_button.style.display = 'none'
+main_spells.style.display = 'none'
 };
 
 function teachersView(){
@@ -36,6 +38,7 @@ main_teachers.style.display="block"
 back_page.style.display = 'inline-block'
 herb_menu.style.display = "block"
 teach_spells.style.width='50%'
+back.push('teachers')
 };
 
 function showAllProfesorsUsingApi(){

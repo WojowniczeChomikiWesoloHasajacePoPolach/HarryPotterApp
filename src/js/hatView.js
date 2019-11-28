@@ -10,20 +10,28 @@ const Hhu = document.querySelector(".h_hu");
 let back = ['main'];
 
 Hsl.addEventListener('click',() => {
-    resetLandingPage();
-    SlytherinView();
+    animationDomOut();
+    setTimeout( () => {resetLandingPage()}, 3000);
+    setTimeout( () => {SlytherinView()}, 3000);
+    setTimeout( () => {animationDomIn()}, 3000);
 });
 Hgr.addEventListener('click',() => {
-    resetLandingPage();
-    GryffindorView();
+    animationDomOut();
+    setTimeout( () => {resetLandingPage()}, 3000);
+    setTimeout( () => {GryffindorView()}, 3000);
+    setTimeout( () => {animationDomIn()}, 3000);
 });
 Hhu.addEventListener('click',() => {
-    resetLandingPage();
-    HufflepuffView();
+    animationDomOut();
+    setTimeout( () => {resetLandingPage()}, 3000);
+    setTimeout( () => {HufflepuffView()}, 3000);
+    setTimeout( () => {animationDomIn()}, 3000);
 });
 Hra.addEventListener('click',() => {
-    resetLandingPage();
-    RavenclawView();
+    animationDomOut();
+    setTimeout( () => {resetLandingPage()}, 3000);
+    setTimeout( () => {RavenclawView()}, 3000);
+    setTimeout( () => {animationDomIn()}, 3000);
 });
 
 
@@ -37,13 +45,17 @@ async function randomView(){
     if (rand == 4) { return await GryffindorView()};
     
 }
+
 hat.addEventListener('click',() => {
-    resetLandingPage();
-    randomView()
+    revAnimationHat();
+    setTimeout( () => {resetLandingPage()}, 3000);
+    setTimeout( () => {randomView()}, 3000);
+    setTimeout( () => {animationHat()}, 3000);
 });
 
 
 async function resetMainPage(){
+
     const shiftCss = 
     spells.style.display ="none"
     teach.style.display="none"
@@ -101,3 +113,28 @@ backPage.addEventListener('click',() => {
     back.pop()
     back.pop()
 });
+
+
+
+async function animationDomOut() {
+    main_house.style.animation = 'domOut 3s';
+};
+
+async function animationDomIn() {
+    main_house.style.animation = 'domIn 3s';
+};
+
+const allll = document.querySelectorAll('div');
+
+async function animationHat() {
+    for(let i = 0; i< allll.length; i++){
+        allll[i].style.animation = 'anHat 3s';
+    }
+};
+
+async function revAnimationHat() {
+    for(let i = 0; i< allll.length; i++){
+        allll[i].style.animation = 'revHat 3s';
+    }
+};
+

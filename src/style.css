@@ -643,3 +643,26 @@ header h3:last-of-type{
     color:black;
     font-size: 1.5rem;
 }
+
+/*Dodanie animacji przechodzenia pomiędzy domami */
+@keyframes domOut {
+    from {right: 0px;}
+    to {right: 100vw;}
+}
+
+@keyframes domIn {
+    from {left: 100vw;}
+    to {left: 0px;}
+}
+
+/*Dodanie animacji Sorting hat*/
+
+@keyframes anHat {
+    from {opacity: 0;}
+    to {opacity: 100%;}
+}
+
+@keyframes revHat {
+    from {opacity: 100%;}
+    to {opacity: 0;}
+}

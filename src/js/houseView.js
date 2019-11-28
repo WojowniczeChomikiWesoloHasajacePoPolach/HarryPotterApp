@@ -367,6 +367,7 @@ const studentView = document.querySelector('.studentsView');
 const pureBloodList = document.querySelector('.pureBlood');
 const halfBloodList = document.querySelector('.halfBlood');
 
+
 // Funkcje zwracające widok studentów danego domu
 
 async function SlytherinStudentsView(){
@@ -437,6 +438,7 @@ async function RavenclawStudentsView(){
         }
     }
 }
+
 // Widoki Ministerstwa Magii, Zakonu Feniksa i Armii Dumbeldore'a
 
 const miArOr = document.querySelector(".ministry_army_order_view");

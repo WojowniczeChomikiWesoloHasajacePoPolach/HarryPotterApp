@@ -113,8 +113,8 @@ async function getResponse(URL) {
     return slytherinMembers
   }
   //Członkowie Hafflepuff
-  async function getHafflepuffMembers() {
-    let URL = "https://www.potterapi.com/v1/characters?house=Hafflepuff&key=$2a$10$HHO4w0IzBGVFiVzfmvOV6.KVRaloeOOGZAyhOrTHO8vyLGjge1gAG";
+  async function getHufflepuffMembers() {
+    let URL = "https://www.potterapi.com/v1/characters?house=Hufflepuff&key=$2a$10$HHO4w0IzBGVFiVzfmvOV6.KVRaloeOOGZAyhOrTHO8vyLGjge1gAG";
     const hafflepuffMembers = await getResponse(URL);
     return hafflepuffMembers
   }

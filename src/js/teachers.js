@@ -11,6 +11,9 @@ const teach_spells = document.querySelector('.teach_spells');
 const btn_teachers = document.querySelector('.btn_teachers');
 const main_logo = document.querySelector('.landing_page');
 const teachers_list = document.querySelector('.teacher_list');
+const wizard = document.querySelector('img.wizard');
+const wizard_words = document.querySelector('.wizard_words')
+const witek = document.querySelector('.witek');
 const teachers = [];
 const listOfTeachers = [];
 
@@ -34,11 +37,12 @@ main_spells.style.display = 'none'
 };
 
 function teachersView(){
+back.push('teachers')
 main_teachers.style.display="block"
 back_page.style.display = 'inline-block'
 herb_menu.style.display = "flex"
 teach_spells.style.width='50%'
-back.push('teachers')
+
 };
 
 function showAllProfesorsUsingApi(){
@@ -67,15 +71,23 @@ function showAllProfesorsUsingApi(){
              const li = document.createElement('li')
              btn_teachers.style.display="none";
              teachers_list.appendChild(li);
-             teachers_list.style.display="block";
+             teachers_list.style.display="grid";
              li.innerHTML =`${x[i].name} ${x[i].role}`
+             wizard.style.display="block";
             }
             styleListOfTeachers();
           }
       }
       getTeachers();
     }
-
+    function letWizardSpeak(){
+      wizard_words.style.display="block";
+      witek.style.display="block";
+    }
+    function beQuiet(){
+      wizard_words.style.display="none";
+      witek.style.display ="none";
+    }
     function checkedIfLoad(){
 
     }
@@ -84,3 +96,5 @@ teach.addEventListener('click', teachersView);
 teach.addEventListener('click', resetLandingPage);
 btn_teachers.addEventListener('click', showAllProfesorsUsingApi);
 main_logo.addEventListener('click', checkedIfLoad);
+wizard.addEventListener('mouseenter', letWizardSpeak);
+wizard.addEventListener('mouseout', beQuiet);

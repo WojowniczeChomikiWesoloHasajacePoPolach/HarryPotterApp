@@ -54,11 +54,15 @@ async function resetMainPage(){
     main_teachers.style.display = 'none'
     main_spells.style.display = 'none'
     back_page.style.display = 'none'
+    miArOr.style.display = 'none'
+    studentView.style.display='none'
     };
 
 
 async function LandingPage(){
+    back.push('main');
     const shiftCss = 
+    teach_spells.style.width='30%'
     spells.style.display ="block"
     teach.style.display="block"
     header.style.display = "block"
@@ -66,7 +70,7 @@ async function LandingPage(){
     mainButtons.style.display = 'flex'
     main_button.style.order = '-1'
     main_button.style.display = "block"
-    back.push('main')
+    
 };
 
 
@@ -79,14 +83,15 @@ landingPage.addEventListener('click',() => {
 
 
 async function backingBack(){
-    const i = back.length -2
+    const i = back.length - 2;
     if (back[i] == 'ra') { return resetLandingPage(), await RavenclawView();};
     if (back[i] == 'hu') { return resetLandingPage(), await HufflepuffView();};
     if (back[i] == 'sl') { return resetLandingPage(), await SlytherinView();};
     if (back[i] == 'gr') { return resetLandingPage(), await GryffindorView();};
-    if (back[i] == 'main') { return resetMainPage(), LandingPage()};
+    if (back[i] == 'main') { return resetMainPage(), await LandingPage()};
     if (back[i] == 'spells') { return resetLandingPage(), spellsView()};
     if (back[i] == 'teachers') { return resetLandingPage(), teachersView()};
+
    
 }
 

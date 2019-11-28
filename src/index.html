@@ -58,8 +58,11 @@
         <h3>Teachers</h3>
         <img class='scroll' src="images/scroll.png">
         <h4>List of teachers</h4>
-        <button class="btn_teachers">Wanna see? Make a click!</button> 
+        <button class="btn_teachers">Wanna see? Make a click and hover it!</button> 
         <ul style="display:none;" class="teacher_list"></ul>
+        <img class="wizard" style="display:none;" src="images/Transparent_Wizard_PNG_Picture.png" alt="Img of Wizard">
+        <p class="wizard_words" style="display:none;">Welcome to Hogwart my dear!</p>
+        <p class="witek" style="display:none;">Najlepszy z nas - Witek</p>
         </div>
         <div class='main_house' style="display: none;">
         <h3></h3>
@@ -75,15 +78,37 @@
             </div>
             <div class="block_buttons">
                 <div class="ministry_of_magic">
-                    <div><img src= "images/snowy-owl-clipart-harry-potter-10.png">Ministry Of Magic</div>
+                    <img src= "images/snowy-owl-clipart-harry-potter-10.png">
+                    <p>Ministry Of Magic</p> 
                 </div>
                 <div class="order_of_the_phoenix">
-                    <div><img src= "images/Fenix_2.png">Order Of The Phoenix</div>
+                    <img src= "images/Fenix_2.png">
+                    <p>Order Of The Phoenix</p> 
                 </div>
-                <div class="dumbledores_army">
-                    <div><img src= "images/Water_Magic_Wand.png">Dumbledore's Army</div>
+                <div class="dumbledores_army">    
+                    <img src= "images/Water_Magic_Wand.png">
+                    <p>Dumbledore's Army</p>
                 </div>
             </div>
+          </div>
+        </div>
+        <div class="studentsView" style="display:none;">
+            <h3>Students</h3>
+            <img src="images/Harry-Potter-Broom-Transparent-Background.png" alt="broom">
+            <div class="scroll_container">
+                <img class="scroll_students" src="images/scroll.png" alt="scroll">
+                <h4>List of PureBlood students</h4> 
+                <ul class="pureBlood"></ul>
+                <img class="scroll_students" src="images/scroll.png" alt="scroll">
+                <h4>List of HalfBlood students</h4>
+                <ul class="halfBlood"></ul>
+                
+            </div>
+        </div>
+        <div class="ministry_army_order_view" style="display: none;">
+            <h3></h3>
+            <img  id="open_book" src="images/Open_book-free-PNG-transparent-background-images-free-download-clipart-pics-e35dad_34ae20c5724b4c699562c4f5c6671ba9.png" alt="Big book">
+            <ul id="members"></ul>
         </div>
         </div>    
         <div class= 'main_spells'  style="display: none;">
@@ -95,11 +120,18 @@
             <div style="display:none;" class="spells_types_list">
                 <button class='btn_spells_type' id='charm'>Charm...................................................40</button>
                 <button class='btn_spells_type' id='curse'>Curse....................................................15</button>
-                <button class='btn_spells_type' id='encharment'>Enchantment..........................................1</button>
+                <button class='btn_spells_type' id='enchantment'>Enchantment..........................................1</button>
                 <button class='btn_spells_type' id='hex'>Hex.......................................................1</button>
                 <button class='btn_spells_type' id='jinx'>Jinx......................................................2</button>
                 <button class='btn_spells_type' id='spell'>Spell....................................................92</button>
                 <button class='btn_spells_type' id='all'>All.....................................................151</button> 
+            </div>
+            <div style='display:none;' class='spells_list_title'>
+                <p>Spell</p>
+                <p>Type</p>
+                <p>Effect</p>
+            </div>
+            <div style='display:none;' class='spells_list'>
             </div>
         </div>
 

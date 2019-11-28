@@ -30,6 +30,129 @@ function resetLandingPage(){
     herbs.style.display = 'none'
     main_button.style.display = 'none'
 };
+async function getSlytherinMembers() {
+    let URL = "https://www.potterapi.com/v1/characters?house=Slytherin&key=$2a$10$HHO4w0IzBGVFiVzfmvOV6.KVRaloeOOGZAyhOrTHO8vyLGjge1gAG";
+    const slytherinMembers = await getResponse(URL);
+    return slytherinMembers
+  }
+//   Członkowie Gryffindoru
+  async function getGryffindorMembers() {
+    let URL = "https://www.potterapi.com/v1/characters?house=Gryffindor&key=$2a$10$HHO4w0IzBGVFiVzfmvOV6.KVRaloeOOGZAyhOrTHO8vyLGjge1gAG";
+    const gryffindorMembers = await getResponse(URL);
+    return gryffindorMembers
+  }
+  //Członkowie Ravenclaw
+  async function getRavenclawMembers() {
+    let URL = "https://www.potterapi.com/v1/characters?house=Ravenclaw&key=$2a$10$HHO4w0IzBGVFiVzfmvOV6.KVRaloeOOGZAyhOrTHO8vyLGjge1gAG";
+    const ravenclawMembers = await getResponse(URL);
+    return ravenclawMembers
+  }
+    //Członkowie Hafflepuff
+  async function getHufflepuffMembers() {
+    let URL = "https://www.potterapi.com/v1/characters?house=Hufflepuff&key=$2a$10$HHO4w0IzBGVFiVzfmvOV6.KVRaloeOOGZAyhOrTHO8vyLGjge1gAG";
+    const hafflepuffMembers = await getResponse(URL);
+    return hafflepuffMembers
+  }
+   //Funkcja zwracająca tablicę członków Dumbledore Army z danego domu, jako argument nazwa domu
+   async function getHouseDumbledoresArmyMembers(houseName) {
+    let houseMembers = [];
+    switch(houseName) {
+      case "Gryffindor":
+        houseMembers = await getGryffindorMembers();
+        break;
+      case "Slytherin":
+        houseMembers = await getSlytherinMembers();
+        break;
+      case "Ravenclaw":
+        houseMembers = await getRavenclawMembers();
+        break;
+      case "Hufflepuff":
+        houseMembers = await getHufflepuffMembers();
+        break;
+    }
+   
+    houseDumbledoresArmyMembers = [];
+    for (i = 0; i < houseMembers.length; i++) {
+      if (houseMembers[i].dumbledoresArmy === undefined) {
+        continue
+      }
+      else if (houseMembers[i].dumbledoresArmy === true) {
+        houseDumbledoresArmyMembers.push(houseMembers[i]);
+      }
+      else {
+        continue
+      }
+    }
+      return houseDumbledoresArmyMembers
+  }
+  //funkcja zwracająca tablicę członków zakonu feniksa z danego domu, jako argument, nazwa domu
+  async function getHouseOrderOfThePhoenixMembers(houseName) {
+    let houseMembers = [];
+    switch(houseName) {
+      case "Gryffindor":
+        houseMembers = await getGryffindorMembers();
+        break;
+      case "Slytherin":
+        houseMembers = await getSlytherinMembers();
+        break;
+      case "Ravenclaw":
+        houseMembers = await getRavenclawMembers();
+        break;
+      case "Hufflepuff":
+        houseMembers = await getHufflepuffMembers();
+        break;
+    }
+   
+    houseOrderOfThePhoenixMembers = [];
+    for (i = 0; i < houseMembers.length; i++) {
+      if (houseMembers[i].orderOfThePhoenix === undefined) {
+        continue
+      }
+      else if (houseMembers[i].orderOfThePhoenix === true) {
+        houseOrderOfThePhoenixMembers.push(houseMembers[i]);
+      }
+      else {
+        continue
+      }
+    }
+      return houseOrderOfThePhoenixMembers
+  }
+  //funkcja zwracająca tablicę członków ministerstwa magii z danego domu, jako argument, nazwa domu
+  async function getMinistryOfMagicMembers(houseName) {
+    let houseMembers = [];
+    switch(houseName) {
+      case "Gryffindor":
+        houseMembers = await getGryffindorMembers();
+        break;
+      case "Slytherin":
+        houseMembers = await getSlytherinMembers();
+        break;
+      case "Ravenclaw":
+        houseMembers = await getRavenclawMembers();
+        break;
+      case "Hufflepuff":
+        houseMembers = await getHufflepuffMembers();
+        break;
+    }
+   
+    houseMinistryOfMagicMembers = [];
+    for (i = 0; i < houseMembers.length; i++) {
+      if (houseMembers[i].ministryOfMagic === undefined) {
+        continue
+      }
+      else if (houseMembers[i].ministryOfMagic === true) {
+        houseMinistryOfMagicMembers.push(houseMembers[i]);
+      }
+      else {
+        continue
+      }
+    }
+      return houseMinistryOfMagicMembers
+  }
+
+
+// Widoki domów
+
 async function SlytherinView(){
     main_house.style.display = "block"
     back_page.style.display = 'inline-block'
@@ -52,6 +175,7 @@ async function SlytherinView(){
 
 
 };
+
 async function GryffindorView(){
     main_house.style.display = "block"
     back_page.style.display = 'inline-block'
@@ -72,6 +196,7 @@ async function GryffindorView(){
     headOfHouse.innerHTML = house.headOfHouse;
     houseGhost.innerHTML = house.houseGhost; 
 };
+
 async function HufflepuffView(){
     main_house.style.display = "block"
     back_page.style.display = 'inline-block'
@@ -92,6 +217,7 @@ async function HufflepuffView(){
     headOfHouse.innerHTML = house.headOfHouse;
     houseGhost.innerHTML = house.houseGhost; 
 };
+
 async function RavenclawView(){
     main_house.style.display = "block"
     back_page.style.display = 'inline-block'
@@ -112,6 +238,9 @@ async function RavenclawView(){
     headOfHouse.innerHTML = house.headOfHouse;
     houseGhost.innerHTML = house.houseGhost;   
 };
+
+// Buttony poszczególnych domów
+
 const SlytherinClick = herbs.children[0];
 const GryffindorClick = herbs.children[1];
 const HufflepuffClick = herbs.children[2];
@@ -120,23 +249,248 @@ const RavenclawClick = herbs.children[3];
 SlytherinClick.addEventListener('click',() => {
     resetLandingPage();
     SlytherinView();
+    students.lastElementChild.addEventListener('click',() =>{
+        resetLandingPage();
+        SlytherinStudentsView();
+    });
+    blockButtons.children[0].addEventListener('click',() =>{
+        resetLandingPage();
+        MinistryView();
+        MinistryMembers("Slytherin");
+    });
+    blockButtons.children[1].addEventListener('click',() =>{
+        resetLandingPage();
+        OrderView();
+        OrderMembers("Slytherin");
+    });
+    blockButtons.children[2].addEventListener('click',() =>{
+        resetLandingPage();
+        ArmyView();
+        ArmyMembers("Slytherin");
+    });
 });
+
 GryffindorClick.addEventListener('click',() => {
     resetLandingPage();
     GryffindorView();
+    students.lastElementChild.addEventListener('click',() =>{
+        resetLandingPage();
+        GryffindorStudentsView();
+    });
+    blockButtons.children[0].addEventListener('click',() =>{
+        resetLandingPage();
+        MinistryView();
+        MinistryMembers("Gryffindor");
+    });
+    blockButtons.children[1].addEventListener('click',() =>{
+        resetLandingPage();
+        OrderView();
+        OrderMembers("Gryffindor");
+    });
+    blockButtons.children[2].addEventListener('click',() =>{
+        resetLandingPage();
+        ArmyView();
+        ArmyMembers("Gryffindor");
+    });
 });
+
 HufflepuffClick.addEventListener('click',() => {
     resetLandingPage();
     HufflepuffView();
+    students.lastElementChild.addEventListener('click',() =>{
+        resetLandingPage();
+        HufflepuffStudentsView();
+    });
+    blockButtons.children[0].addEventListener('click',() =>{
+        resetLandingPage();
+        MinistryView();
+        MinistryMembers("Hufflepuff");
+    });
+    blockButtons.children[1].addEventListener('click',() =>{
+        resetLandingPage();
+        OrderView();
+        OrderMembers("Hufflepuff");
+    });
+    blockButtons.children[2].addEventListener('click',() =>{
+        resetLandingPage();
+        ArmyView();
+        ArmyMembers("Hufflepuff");
+    });
 });
+
 RavenclawClick.addEventListener('click',() => {
     resetLandingPage();
     RavenclawView();
+    students.lastElementChild.addEventListener('click',() =>{
+        resetLandingPage();
+        RavenclawStudentsView();
+    });
+    blockButtons.children[0].addEventListener('click',() =>{
+        resetLandingPage();
+        MinistryView();
+        MinistryMembers("Ravenclaw");
+    });
+    blockButtons.children[1].addEventListener('click',() =>{
+        resetLandingPage();
+        OrderView();
+        OrderMembers("Ravenclaw");
+    });
+    blockButtons.children[2].addEventListener('click',() =>{
+        resetLandingPage();
+        ArmyView();
+        ArmyMembers("Ravenclaw");
+    });
 });
 
+// Students view
+const studentView = document.querySelector('.studentsView');
+const pureBloodList = document.querySelector('.pureBlood');
+const halfBloodList = document.querySelector('.halfBlood');
+
+// Funkcje zwracające widok studentów danego domu
+
+async function SlytherinStudentsView(){
+    main_house.style.display = "none"
+    teach_spells.style.width='35%'
+    studentView.style.display='block'
+    const members = await getSlytherinMembers();
+    console.log(members);
+    for(let i = 0; i<members.length;i++){
+        const listEl = document.createElement('li');
+        if((members[i].role == "student" || members[i].role == "Student") && members[i].bloodStatus == "pure-blood"){
+            listEl.innerText = `${members[i].name}`;
+            pureBloodList.appendChild(listEl);
+        }else if((members[i].role == "student" || members[i].role == "Student") && members[i].bloodStatus == "half-blood"){
+            listEl.innerText = `${members[i].name}`;
+            halfBloodList.appendChild(listEl);
+        }
+    }
+}
+
+async function GryffindorStudentsView(){
+    main_house.style.display = "none"
+    teach_spells.style.width='35%'
+    studentView.style.display='block'
+    const members = await getGryffindorMembers();
+    for(let i = 0; i<members.length;i++){
+        const listEl = document.createElement('li');
+        if((members[i].role == "student" || members[i].role == "Student") && members[i].bloodStatus == "pure-blood"){
+            listEl.innerText = `${members[i].name}`;
+            pureBloodList.appendChild(listEl);
+        }else if((members[i].role == "student" || members[i].role == "Student") && members[i].bloodStatus == "half-blood"){
+            listEl.innerText = `${members[i].name}`;
+            halfBloodList.appendChild(listEl);
+        }
+    }
+}
+
+async function HufflepuffStudentsView(){
+    main_house.style.display = "none"
+    teach_spells.style.width='35%'
+    studentView.style.display='block'
+    const members = await getHufflepuffMembers();
+    for(let i = 0; i<members.length;i++){
+        const listEl = document.createElement('li');
+        if((members[i].role == "student" || members[i].role == "Student") && members[i].bloodStatus == "pure-blood"){
+            listEl.innerText = `${members[i].name}`;
+            pureBloodList.appendChild(listEl);
+        }else if((members[i].role == "student" || members[i].role == "Student") && members[i].bloodStatus == "half-blood"){
+            listEl.innerText = `${members[i].name}`;
+            halfBloodList.appendChild(listEl);
+        }
+    }
+}
+
+async function RavenclawStudentsView(){
+    main_house.style.display = "none"
+    teach_spells.style.width='35%'
+    studentView.style.display='block'
+    const members = await getRavenclawMembers();
+    for(let i = 0; i<members.length;i++){
+        const listEl = document.createElement('li');
+        if((members[i].role == "student" || members[i].role == "Student") && members[i].bloodStatus == "pure-blood"){
+            listEl.innerText = `${members[i].name}`;
+            pureBloodList.appendChild(listEl);
+        }else if((members[i].role == "student" || members[i].role == "Student") && members[i].bloodStatus == "half-blood"){
+            listEl.innerText = `${members[i].name}`;
+            halfBloodList.appendChild(listEl);
+        }
+    }
+}
+// Widoki Ministerstwa Magii, Zakonu Feniksa i Armii Dumbeldore'a
+
+const miArOr = document.querySelector(".ministry_army_order_view");
+const nazwaZakladki = document.querySelector('.ministry_army_order_view h3');
+const membersList = document.getElementById('members');
 
 
+async function MinistryView(){
+    main_house.style.display = "none"
+    teach_spells.style.width='35%'
+    miArOr.style.display = 'block';
+    const ministryImg = document.createElement('img');
+    ministryImg.setAttribute('src', 'images/snowy-owl-clipart-harry-potter-10.png');
+    miArOr.appendChild(ministryImg);
+    nazwaZakladki.innerHTML = 'Ministry of magic';
+    const bookTitle = document.createElement('h4');
+    bookTitle.innerText = 'List of Ministry of Magic'
+    miArOr.appendChild(bookTitle);
+}
 
+async function OrderView(){
+    main_house.style.display = "none"
+    teach_spells.style.width='35%'
+    miArOr.style.display = 'block';
+    const orderImg = document.createElement('img');
+    orderImg.setAttribute('src', 'images/Fenix_2.png');
+    miArOr.appendChild(orderImg);
+    nazwaZakladki.innerHTML = 'Order Of The Phoenix';
+    const bookTitle = document.createElement('h4');
+    bookTitle.innerText = 'Order Of The Phoenix list'
+    miArOr.appendChild(bookTitle);
 
+}
 
+async function ArmyView(){
+    main_house.style.display = "none"
+    teach_spells.style.width='35%'
+    miArOr.style.display = 'block';
+    const armyImg = document.createElement('img');
+    armyImg.setAttribute('src', 'images/Water_Magic_Wand.png');
+    miArOr.appendChild(armyImg);
+    nazwaZakladki.innerHTML = "Dumbeldore's Army";
+    const bookTitle = document.createElement('h4');
+    bookTitle.innerText = "List of Dumbeldore's Army";
+    miArOr.appendChild(bookTitle);
 
+}
+
+// Funckje zwracające  członków danego ugrupowania z podziałem na domy
+
+async function MinistryMembers(houseName){
+    const ministryMembers = await getMinistryOfMagicMembers(houseName); 
+    console.log(ministryMembers)       ;
+    for(let i = 0; i<ministryMembers.length; i++){
+        let listEl = document.createElement('li');
+            listEl.innerText = `${ministryMembers[i].name}`;
+      membersList.appendChild(listEl);
+    }
+}
+async function OrderMembers(houseName){
+    const orderMembers = await getHouseOrderOfThePhoenixMembers(houseName);
+    console.log(orderMembers);
+    for(let i = 0; i<orderMembers.length; i++){
+        let listEl = document.createElement('li');
+        listEl.innerText = `${orderMembers[i].name}`;
+        membersList.appendChild(listEl);
+    }
+}
+async function ArmyMembers(houseName){
+    const armyMembers= await  getHouseDumbledoresArmyMembers(houseName);
+        console.log(armyMembers);
+        for(let i = 0; i<armyMembers.length; i++){
+        let listEl = document.createElement('li');
+        listEl.innerText = `${armyMembers[i].name}`;
+        membersList.appendChild(listEl);
+    }
+}

@@ -22,7 +22,7 @@ body {
     background-image: url("images/f9d7af29e8b87e7bdbc81609503036d1.jpg");
     background-size: cover;
     background-repeat: no-repeat;
-    background-position: bottom;
+    /* background-position: bottom; */
 }
 main{
     position:relative;
@@ -222,28 +222,28 @@ header h3:last-of-type{
 }
 .main_image{
     position:absolute;
-    top:20%;
+    top:17%;
     left:50%;
     transform:translateX(-20%);
     height:15vw;
 }
 .main_teachers h3, .main_spells h3{
     position:absolute;
-    top:28%;
+    top:25%;
     left:50%;
     transform:translateX(-50%)
 }
 .main_teachers .scroll {
     position:absolute;
-    top:45%;
-    height:50%;
+    top:37%;
+    height:63%;
     z-index:-1;
     left:50%;
     transform:translateX(-50%);
 }
 .main_teachers h4{
     position:absolute;
-    top:52%;
+    top:39%;
     left:50%;
     transform:translateX(-50%);
     color:black;
@@ -273,7 +273,7 @@ header h3:last-of-type{
     background-color:transparent;
     outline:none;
     border:none;
-    font-size:3rem;
+    font-size:4rem;
     position:absolute;
     top:66%;
     left:50%;
@@ -289,13 +289,66 @@ header h3:last-of-type{
 
 }
 .teacher_list{
-    font-size:2rem;
-}
-teacher_li li{
-    display:grid;
+    font-size:1rem;
     grid-template-columns: 2;
-    grid-template-rows:1;
-    width:40%;
+    grid-template-rows:4;
+    justify-content:center;
+    left:27%;
+    align-items:center;
+    text-align:center;
+    position:absolute;
+    top:52%;
+    z-index:1;
+}
+.teacher_list li{
+    color:rgb(0, 0, 0);
+    list-style:none;
+}
+
+.teacher_list li:hover{
+    animation-name: cokolwiek;
+    animation-duration:1.5s;
+    animation-timing-function: ease-in-out;
+    animation-fill-mode: forwards;
+}
+.wizard{
+    position:absolute;
+    height:40%;
+    left:50%;
+    top:47%;
+    filter: drop-shadow(1px 1px 0 rgb(0, 0, 0))
+    drop-shadow(-1px 1px 0 rgb(0, 0, 0))
+    drop-shadow(1px -1px 0 rgb(0, 0, 0))
+    drop-shadow(-1px -1px 0 rgb(0, 0, 0));
+}
+.wizard:hover{
+    filter: drop-shadow(2px 2px 0 rgb(231, 197, 7))
+    drop-shadow(-2px 2px 0 rgb(240, 255, 35))
+    drop-shadow(2px -2px 0 white)
+    drop-shadow(-2px -2px 0 white);
+    transition-duration: 1s;
+}
+
+.wizard_words{
+    position:absolute;
+    top:50%;
+    left:52%;
+    font-size:2.4rem;
+}
+.witek{
+    position:absolute;
+    top:80%;
+    left:55%;
+    font-size:2rem;
+    filter: drop-shadow(2px 2px 3px rgb(0, 0, 0))
+}
+@keyframes cokolwiek{
+    0% {
+        transform: scale(1);
+    }
+    100%{
+        transform: scale(2);
+    }
 }
 .main_house{
     position:relative;
@@ -330,28 +383,159 @@ teacher_li li{
     position: absolute;
     top: 65%;
     left: 5%;
-    transform: rotate(-30deg);
+    transform: rotate(-15deg);
     height: 25vw;
 }
 .students > div{
     position: absolute;
     top: 71%;
     left: 20%;
+    text-shadow: 3px 2px 3px rgb(0, 0, 0);
+}
+.students > div:hover {
+    transform: scale(1.3);
+    transition-duration:0.4s;
+    cursor: pointer;
 }
 
 .block_buttons{
     display:flex;
     position:absolute;
     left: 60%;
-    top: 57%;
+    top: 65%;
     flex-wrap:wrap;
 }
 .block_buttons img{
-    height: 10vw;
+    height: 9vw;
 }
-.block_buttons > div {
-    width: 100%;
+.ministry_of_magic, .order_of_the_phoenix, .dumbledores_army{
+    display: flex;
+}
+.block_buttons > div > p:hover{
+    transform: scale(1.3);
+    transition-duration:0.4s;
+    cursor: pointer;
+}
+/* Students view and elements in it */
+.studentsView h3{
+    position: absolute;
+    top: 20%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size:9rem ;
+    text-shadow: 2px 2px 3px rgb(0, 0, 0);
+    font-weight: 400;
+}
+.studentsView > img{
+    position: absolute;
+    top: 19%;
+    left: 22%;
+    height: 30vw;
+    transform: rotate(35deg);
+}
+.scroll_container{
+    display: flex;
+    position: absolute;
+    top:40%;
+    z-index: -1;
+}
+.scroll_students{
+    top: 60%;
+    width: 50%;
+    height: 50%;
+}
+
+.scroll_container h4:first-of-type{
+    position: absolute;
     font-size: 4rem;
+    font-weight: 400;
+    color: black;
+    top: 18%;
+    left: 11%;
+}
+.scroll_container h4:last-of-type{
+    position: absolute;
+    font-size: 4rem;
+    font-weight: 400;
+    color: black;
+    top: 18%;
+    right: 11%;
+}
+.pureBlood{
+    left: 7%;
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-column-gap:5rem ;
+    position: absolute;
+    text-align: center;
+    top: 35%;
+    list-style: none;
+    
+}
+.halfBlood{
+    right: 10%;
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-column-gap:5rem ;
+    position: absolute;
+    text-align: center;
+    top: 35%;
+    list-style: none;
+    
+}
+.pureBlood li, .halfBlood li{
+    color: black;
+    font-size: 3rem;
+
+    
+}
+#open_book {
+    position: absolute;
+    top: 25%;
+    left: 50%;
+    transform: translateX(-50%);
+    height: 67%;
+}
+.ministry_army_order_view img{
+    position: absolute;
+    top: 13%;
+    left: 50%;
+    transform: translateX(-50%);
+    
+}
+.ministry_army_order_view h3{
+    position: absolute;
+    top: 27%;
+    left: 50%;
+    transform: translateX(-50%);
+    font-size: 7rem;
+    z-index: 1;
+    text-shadow: 5px 5px 5px rgb(0, 0, 0);
+    font-weight: 400;
+}
+.ministry_army_order_view h4{
+    position: absolute;
+    top: 41%;
+    left: 25%;
+    font-size: 3rem;
+    z-index: 1;
+    font-weight: 400;
+    color: black;
+}
+#members{
+    display: grid;
+    grid-template-columns: auto auto;
+    grid-column-gap: 25rem;
+    left: 29%;
+    position: absolute;
+    text-align: center;
+    top: 45%;
+    list-style: none;
+    
+}
+#members li{
+    font-size: 2rem;
+    color: black;
 }
 
 .main_spells_image{
@@ -420,7 +604,6 @@ teacher_li li{
     drop-shadow(-2px 2px 0 rgb(245, 248, 71))
     drop-shadow(2px -2px 3px white);
 }
-
 .spells_list {
     display:flex;
     flex-direction: column;

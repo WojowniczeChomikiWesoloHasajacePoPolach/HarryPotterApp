@@ -10,7 +10,7 @@ btn_spells.addEventListener('click', displaySpellsList)
 function spellsView(){
     main_spells.style.display='block';
     back_page.style.display = 'inline-block';
-    herb_menu.style.display = 'block';
+    herb_menu.style.display = 'flex';
     teach_spells.style.width='50%';
     back.push('spells')
 };

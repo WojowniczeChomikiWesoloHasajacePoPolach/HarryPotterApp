@@ -36,7 +36,7 @@ main_spells.style.display = 'none'
 function teachersView(){
 main_teachers.style.display="block"
 back_page.style.display = 'inline-block'
-herb_menu.style.display = "block"
+herb_menu.style.display = "flex"
 teach_spells.style.width='50%'
 back.push('teachers')
 };

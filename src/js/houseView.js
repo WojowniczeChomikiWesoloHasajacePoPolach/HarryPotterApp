@@ -7,6 +7,7 @@ const houseButtons = main_house.querySelector(".house_buttons");
 const students = houseButtons.querySelector(".students");
 const blockButtons = houseButtons.querySelector(".block_buttons");
 const divs = blockButtons.querySelectorAll("div");
+
 //przekopiowane z API, na razie tylko roboczo
 async function getResponse(URL) {
     let response;
@@ -22,13 +23,25 @@ async function getHouse(houseId) {
     let house = await getResponse(URL);
     return house[0]
   }
-function resetLandingPage(){
+async function resetLandingPage(){
+    const houseHerb = document.querySelectorAll(".house_herb");
     const shiftCss = 
     spells.style.display ="none"
     teach.style.display="none"
     header.style.display = 'none'
     herbs.style.display = 'none'
+    main_house.style.display = 'none'
     main_button.style.display = 'none'
+    main_teachers.style.display = 'none'
+    main_spells.style.display = 'none'
+    miArOr.style.display = 'none'
+    studentView.style.display='none'
+    for (let i = 0; i < houseHerb.length; i++){
+        houseHerb[i].remove()
+    };
+    for (let i = 0; i < herb_menu.children.length; i++){
+        herb_menu.children[i].style.display = 'block'
+    };
 };
 async function getSlytherinMembers() {
     let URL = "https://www.potterapi.com/v1/characters?house=Slytherin&key=$2a$10$HHO4w0IzBGVFiVzfmvOV6.KVRaloeOOGZAyhOrTHO8vyLGjge1gAG";
@@ -154,9 +167,10 @@ async function getSlytherinMembers() {
 // Widoki domów
 
 async function SlytherinView(){
+    back.push('sl')
     main_house.style.display = "block"
     back_page.style.display = 'inline-block'
-    herb_menu.style.display = "block"
+    herb_menu.style.display = "flex"
     herb_menu.children[0].style.display = "none"
     teach_spells.style.width='50%'
     houseName.innerHTML = "Slytherin";
@@ -172,14 +186,15 @@ async function SlytherinView(){
     houseFounder.innerHTML = house.founder;
     headOfHouse.innerHTML = house.headOfHouse;
     houseGhost.innerHTML = house.houseGhost;
-
+    
 
 };
 
 async function GryffindorView(){
+    back.push('gr')
     main_house.style.display = "block"
     back_page.style.display = 'inline-block'
-    herb_menu.style.display = "block"
+    herb_menu.style.display = "flex"
     herb_menu.children[1].style.display = "none"
     teach_spells.style.width='50%'
     houseName.innerHTML = "Gryffindor";
@@ -195,13 +210,15 @@ async function GryffindorView(){
     houseFounder.innerHTML = house.founder;
     headOfHouse.innerHTML = house.headOfHouse;
     houseGhost.innerHTML = house.houseGhost; 
+   
 };
 
 async function HufflepuffView(){
+    back.push('hu')
     main_house.style.display = "block"
     back_page.style.display = 'inline-block'
-    herb_menu.style.display = "block"
-    herb_menu.children[0].style.display = "none"
+    herb_menu.style.display = "flex"
+    herb_menu.children[3].style.display = "none"
     teach_spells.style.width='50%'
     houseName.innerHTML = "Hufflepuff";
     const herbImg = document.createElement('img');
@@ -216,13 +233,15 @@ async function HufflepuffView(){
     houseFounder.innerHTML = house.founder;
     headOfHouse.innerHTML = house.headOfHouse;
     houseGhost.innerHTML = house.houseGhost; 
+    
 };
 
 async function RavenclawView(){
+    back.push('ra')
     main_house.style.display = "block"
     back_page.style.display = 'inline-block'
-    herb_menu.style.display = "block"
-    herb_menu.children[0].style.display = "none"
+    herb_menu.style.display = "flex"
+    herb_menu.children[2].style.display = "none"
     teach_spells.style.width='50%'
     houseName.innerHTML = "Ravenclaw";
     const herbImg = document.createElement('img');
@@ -237,6 +256,7 @@ async function RavenclawView(){
     houseFounder.innerHTML = house.founder;
     headOfHouse.innerHTML = house.headOfHouse;
     houseGhost.innerHTML = house.houseGhost;   
+    
 };
 
 // Buttony poszczególnych domów
@@ -347,6 +367,7 @@ const studentView = document.querySelector('.studentsView');
 const pureBloodList = document.querySelector('.pureBlood');
 const halfBloodList = document.querySelector('.halfBlood');
 
+
 // Funkcje zwracające widok studentów danego domu
 
 async function SlytherinStudentsView(){
@@ -417,6 +438,7 @@ async function RavenclawStudentsView(){
         }
     }
 }
+
 // Widoki Ministerstwa Magii, Zakonu Feniksa i Armii Dumbeldore'a
 
 const miArOr = document.querySelector(".ministry_army_order_view");

@@ -96,7 +96,7 @@ landingPage.addEventListener('click',() => {
 
 async function backingBack(){
     const i = back.length - 2;
-    if (back[i] == 'ra') { return resetLandingPage(), await RavenclawView();};
+    if (back[i] == 'ra') { return zzz()};
     if (back[i] == 'hu') { return resetLandingPage(), await HufflepuffView();};
     if (back[i] == 'sl') { return resetLandingPage(), await SlytherinView();};
     if (back[i] == 'gr') { return resetLandingPage(), await GryffindorView();};
@@ -106,7 +106,12 @@ async function backingBack(){
 
    
 }
-
+function zzz(){
+        animationDomRevIn();
+        setTimeout( () => {resetLandingPage()}, 3000);
+        setTimeout( () => {RavenclawView()}, 3000);
+        setTimeout( () => {animationDomRevOut()}, 3000);
+}
 
 backPage.addEventListener('click',() => {
     backingBack()
@@ -116,23 +121,31 @@ backPage.addEventListener('click',() => {
 
 
 
-async function animationDomOut() {
+function animationDomOut() {
     main_house.style.animation = 'domOut 3s';
 };
 
-async function animationDomIn() {
+function animationDomIn() {
     main_house.style.animation = 'domIn 3s';
+};
+
+function animationDomRevOut() {
+    main_house.style.animation = 'domRevOut 3s';
+};
+
+function animationDomRevIn() {
+    main_house.style.animation = 'domRevIn 3s';
 };
 
 const allll = document.querySelectorAll('div');
 
-async function animationHat() {
+function animationHat() {
     for(let i = 0; i< allll.length; i++){
         allll[i].style.animation = 'anHat 3s';
     }
 };
 
-async function revAnimationHat() {
+function revAnimationHat() {
     for(let i = 0; i< allll.length; i++){
         allll[i].style.animation = 'revHat 3s';
     }

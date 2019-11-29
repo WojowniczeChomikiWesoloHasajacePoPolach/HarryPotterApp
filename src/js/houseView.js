@@ -346,15 +346,16 @@ RavenclawClick.addEventListener('click',() => {
 const studentView = document.querySelector('.studentsView');
 const pureBloodList = document.querySelector('.pureBlood');
 const halfBloodList = document.querySelector('.halfBlood');
+const unknownBloodList= document.getElementById('unknownBlood');
+const muggleBornList = document.getElementById('muggleBorn');
 
 // Funkcje zwracające widok studentów danego domu
 
 async function SlytherinStudentsView(){
+    studentView.style.display='flex'
     main_house.style.display = "none"
     teach_spells.style.width='35%'
-    studentView.style.display='block'
     const members = await getSlytherinMembers();
-    console.log(members);
     for(let i = 0; i<members.length;i++){
         const listEl = document.createElement('li');
         if((members[i].role == "student" || members[i].role == "Student") && members[i].bloodStatus == "pure-blood"){
@@ -363,6 +364,22 @@ async function SlytherinStudentsView(){
         }else if((members[i].role == "student" || members[i].role == "Student") && members[i].bloodStatus == "half-blood"){
             listEl.innerText = `${members[i].name}`;
             halfBloodList.appendChild(listEl);
+        }else if((members[i].role == "student" || members[i].role == "Student") && members[i].bloodStatus == "muggle-born"){
+            listEl.innerText = `${members[i].name}`;
+            muggleBornList.appendChild(listEl);
+        }else if((members[i].role == "student" || members[i].role == "Student") && members[i].bloodStatus == "unknown"){
+            listEl.innerText = `${members[i].name}`;
+            unknownBloodList.appendChild(listEl);
+       }
+    }
+    let arrayList = [pureBloodList,halfBloodList,muggleBornList,unknownBloodList];
+    let alert = document.createElement('li');
+    alert.setAttribute('class','alert');
+    alert.innerText= 'No students found';
+    for(let i=0; i<arrayList.length; i++){
+        if(arrayList[i].children.length == 0){
+            console.log(arrayList[i]);
+            arrayList[i].appendChild(alert);
         }
     }
 }
@@ -370,7 +387,7 @@ async function SlytherinStudentsView(){
 async function GryffindorStudentsView(){
     main_house.style.display = "none"
     teach_spells.style.width='35%'
-    studentView.style.display='block'
+    studentView.style.display='flex'
     const members = await getGryffindorMembers();
     for(let i = 0; i<members.length;i++){
         const listEl = document.createElement('li');
@@ -380,6 +397,22 @@ async function GryffindorStudentsView(){
         }else if((members[i].role == "student" || members[i].role == "Student") && members[i].bloodStatus == "half-blood"){
             listEl.innerText = `${members[i].name}`;
             halfBloodList.appendChild(listEl);
+        }else if((members[i].role == "student" || members[i].role == "Student") && members[i].bloodStatus == "muggle-born"){
+            listEl.innerText = `${members[i].name}`;
+            muggleBornList.appendChild(listEl);
+        }else if((members[i].role == "student" || members[i].role == "Student") && members[i].bloodStatus == "unknown"){
+            listEl.innerText = `${members[i].name}`;
+            unknownBloodList.appendChild(listEl);
+       }
+    }
+    let arrayList = [pureBloodList,halfBloodList,muggleBornList,unknownBloodList];
+    let alert = document.createElement('li');
+    alert.setAttribute('class','alert');
+    alert.innerText= 'No students found';
+    for(let i=0; i<arrayList.length; i++){
+        if(arrayList[i].children.length == 0){
+            console.log(arrayList[i]);
+            arrayList[i].appendChild(alert);
         }
     }
 }
@@ -387,7 +420,7 @@ async function GryffindorStudentsView(){
 async function HufflepuffStudentsView(){
     main_house.style.display = "none"
     teach_spells.style.width='35%'
-    studentView.style.display='block'
+    studentView.style.display='flex'
     const members = await getHufflepuffMembers();
     for(let i = 0; i<members.length;i++){
         const listEl = document.createElement('li');
@@ -397,6 +430,22 @@ async function HufflepuffStudentsView(){
         }else if((members[i].role == "student" || members[i].role == "Student") && members[i].bloodStatus == "half-blood"){
             listEl.innerText = `${members[i].name}`;
             halfBloodList.appendChild(listEl);
+        }else if((members[i].role == "student" || members[i].role == "Student") && members[i].bloodStatus == "muggle-born"){
+            listEl.innerText = `${members[i].name}`;
+            muggleBornList.appendChild(listEl);
+        }else if((members[i].role == "student" || members[i].role == "Student") && members[i].bloodStatus == "unknown"){
+            listEl.innerText = `${members[i].name}`;
+            unknownBloodList.appendChild(listEl);
+       }
+    }
+    let arrayList = [pureBloodList,halfBloodList,muggleBornList,unknownBloodList];
+    let alert = document.createElement('li');
+    alert.setAttribute('class','alert');
+    alert.innerText= 'No students found';
+    for(let i=0; i<arrayList.length; i++){
+        if(arrayList[i].children.length == 0){
+            console.log(arrayList[i]);
+            arrayList[i].appendChild(alert);
         }
     }
 }
@@ -404,7 +453,7 @@ async function HufflepuffStudentsView(){
 async function RavenclawStudentsView(){
     main_house.style.display = "none"
     teach_spells.style.width='35%'
-    studentView.style.display='block'
+    studentView.style.display='flex'
     const members = await getRavenclawMembers();
     for(let i = 0; i<members.length;i++){
         const listEl = document.createElement('li');
@@ -414,6 +463,22 @@ async function RavenclawStudentsView(){
         }else if((members[i].role == "student" || members[i].role == "Student") && members[i].bloodStatus == "half-blood"){
             listEl.innerText = `${members[i].name}`;
             halfBloodList.appendChild(listEl);
+        }else if((members[i].role == "student" || members[i].role == "Student") && members[i].bloodStatus == "muggle-born"){
+            listEl.innerText = `${members[i].name}`;
+            muggleBornList.appendChild(listEl);
+        }else if((members[i].role == "student" || members[i].role == "Student") && members[i].bloodStatus == "unknown"){
+            listEl.innerText = `${members[i].name}`;
+            unknownBloodList.appendChild(listEl);
+       }
+    }
+    let arrayList = [pureBloodList,halfBloodList,muggleBornList,unknownBloodList];
+    let alert = document.createElement('li');
+    alert.setAttribute('class','alert');
+    alert.innerText= 'No students found';
+    for(let i=0; i<arrayList.length; i++){
+        if(arrayList[i].children.length == 0){
+            console.log(arrayList[i]);
+            arrayList[i].appendChild(alert);
         }
     }
 }
@@ -494,3 +559,11 @@ async function ArmyMembers(houseName){
         membersList.appendChild(listEl);
     }
 }
+// Przełącznie widoków domów przy użyciu małych hrebów klasy .hreb_menu
+
+const hrebMenuSlyt = document.querySelector('h_sl');
+
+hrebMenuSlyt.addEventListener('click',()=>{
+    resetLandingPage();
+    SlytherinView();
+})

@@ -23,26 +23,7 @@ async function getHouse(houseId) {
     let house = await getResponse(URL);
     return house[0]
   }
-async function resetLandingPage(){
-    const houseHerb = document.querySelectorAll(".house_herb");
-    const shiftCss = 
-    spells.style.display ="none"
-    teach.style.display="none"
-    header.style.display = 'none'
-    herbs.style.display = 'none'
-    main_house.style.display = 'none'
-    main_button.style.display = 'none'
-    main_teachers.style.display = 'none'
-    main_spells.style.display = 'none'
-    miArOr.style.display = 'none'
-    studentView.style.display='none'
-    for (let i = 0; i < houseHerb.length; i++){
-        houseHerb[i].remove()
-    };
-    for (let i = 0; i < herb_menu.children.length; i++){
-        herb_menu.children[i].style.display = 'block'
-    };
-};
+
 async function getSlytherinMembers() {
     let URL = "https://www.potterapi.com/v1/characters?house=Slytherin&key=$2a$10$HHO4w0IzBGVFiVzfmvOV6.KVRaloeOOGZAyhOrTHO8vyLGjge1gAG";
     const slytherinMembers = await getResponse(URL);

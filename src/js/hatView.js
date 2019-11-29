@@ -9,6 +9,7 @@ const Hhu = document.querySelector(".h_hu");
 
 let back = ['main'];
 
+
 Hsl.addEventListener('click',() => {
     animationDomOut();
     setTimeout( () => {resetLandingPage()}, 3000);
@@ -33,8 +34,38 @@ Hra.addEventListener('click',() => {
     setTimeout( () => {RavenclawView()}, 3000);
     setTimeout( () => {animationDomIn()}, 3000);
 });
-
-
+// Alternatywa dla przycisków od studentów, armii, ,ministerstwa i zakonu
+students.lastElementChild.addEventListener('click',() =>{
+    resetLandingPage();
+    if (back[back.length - 1] == 'gr'){ return GryffindorStudentsView()};
+    if (back[back.length - 1] == 'sl'){ return SlytherinStudentsView()};
+    if (back[back.length - 1] == 'hu'){ return HufflepuffStudentsView()};
+    if (back[back.length - 1] == 'ra'){ return RavenclawStudentsView()};
+});
+blockButtons.children[0].addEventListener('click',() =>{
+    resetLandingPage();
+    MinistryView();
+    if (back[back.length - 1] == 'gr'){ return MinistryMembers("Gryffindor")};
+    if (back[back.length - 1] == 'sl'){ return MinistryMembers("Slytherin")};
+    if (back[back.length - 1] == 'hu'){ return MinistryMembers("Hufflepuff")};
+    if (back[back.length - 1] == 'ra'){ return MinistryMembers("Ravenclaw")};
+});
+blockButtons.children[1].addEventListener('click',() =>{
+    resetLandingPage();
+    OrderView();
+    if (back[back.length - 1] == 'gr'){ return OrderMembers("Gryffindor")};
+    if (back[back.length - 1] == 'sl'){ return OrderMembers("Slytherin")};
+    if (back[back.length - 1] == 'hu'){ return OrderMembers("Hufflepuff")};
+    if (back[back.length - 1] == 'ra'){ return OrderMembers("Ravenclaw")};
+});
+blockButtons.children[2].addEventListener('click',() =>{
+    resetLandingPage();
+    ArmyView();
+    if (back[back.length - 1] == 'gr'){ return ArmyMembers("Gryffindor")};
+    if (back[back.length - 1] == 'sl'){ return ArmyMembers("Slytherin")};
+    if (back[back.length - 1] == 'hu'){ return ArmyMembers("Hufflepuff")};
+    if (back[back.length - 1] == 'ra'){ return ArmyMembers("Ravenclaw")};
+});
 
 async function randomView(){
     const rand = Math.floor(Math.random() * 4 + 1) ;

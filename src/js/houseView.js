@@ -401,7 +401,6 @@ async function SlytherinStudentsView(){
     alert.innerText= 'No students found';
     for(let i=0; i<arrayList.length; i++){
         if(arrayList[i].children.length == 0){
-            console.log(arrayList[i]);
             arrayList[i].appendChild(alert);
         }
     }
@@ -434,7 +433,6 @@ async function GryffindorStudentsView(){
     alert.innerText= 'No students found';
     for(let i=0; i<arrayList.length; i++){
         if(arrayList[i].children.length == 0){
-            console.log(arrayList[i]);
             arrayList[i].appendChild(alert);
         }
     }
@@ -467,7 +465,6 @@ async function HufflepuffStudentsView(){
     alert.innerText= 'No students found';
     for(let i=0; i<arrayList.length; i++){
         if(arrayList[i].children.length == 0){
-            console.log(arrayList[i]);
             arrayList[i].appendChild(alert);
         }
     }
@@ -500,7 +497,6 @@ async function RavenclawStudentsView(){
     alert.innerText= 'No students found';
     for(let i=0; i<arrayList.length; i++){
         if(arrayList[i].children.length == 0){
-            console.log(arrayList[i]);
             arrayList[i].appendChild(alert);
         }
     }
@@ -559,7 +555,6 @@ const bookContainer = document.getElementById('book_container');
 
 async function MinistryMembers(houseName){
     const ministryMembers = await getMinistryOfMagicMembers(houseName); 
-    console.log(ministryMembers);
     if(ministryMembers.length == 0){
         let seal = document.createElement('img');
         let message = document.createElement('h3');
@@ -580,7 +575,6 @@ async function MinistryMembers(houseName){
 }
 async function OrderMembers(houseName){
     const orderMembers = await getHouseOrderOfThePhoenixMembers(houseName);
-    console.log(orderMembers);
     if(orderMembers.length == 0){
         let seal = document.createElement('img');
         let message = document.createElement('h3');
@@ -601,7 +595,6 @@ async function OrderMembers(houseName){
 }
 async function ArmyMembers(houseName){
     const armyMembers= await  getHouseDumbledoresArmyMembers(houseName);
-    console.log(armyMembers);
     if(armyMembers.length == 0){
         let seal = document.createElement('img');
         let message = document.createElement('h3');

@@ -494,7 +494,7 @@ const membersList = document.getElementById('members');
 async function MinistryView(){
     main_house.style.display = "none"
     teach_spells.style.width='35%'
-    miArOr.style.display = 'block';
+    miArOr.style.display = 'flex';
     const ministryImg = document.createElement('img');
     ministryImg.setAttribute('src', 'images/snowy-owl-clipart-harry-potter-10.png');
     miArOr.appendChild(ministryImg);
@@ -507,7 +507,7 @@ async function MinistryView(){
 async function OrderView(){
     main_house.style.display = "none"
     teach_spells.style.width='35%'
-    miArOr.style.display = 'block';
+    miArOr.style.display = 'flex';
     const orderImg = document.createElement('img');
     orderImg.setAttribute('src', 'images/Fenix_2.png');
     miArOr.appendChild(orderImg);
@@ -521,7 +521,7 @@ async function OrderView(){
 async function ArmyView(){
     main_house.style.display = "none"
     teach_spells.style.width='35%'
-    miArOr.style.display = 'block';
+    miArOr.style.display = 'flex';
     const armyImg = document.createElement('img');
     armyImg.setAttribute('src', 'images/Water_Magic_Wand.png');
     miArOr.appendChild(armyImg);

@@ -485,57 +485,68 @@ header h3:last-of-type{
 }
 .alert{
     padding-top: 20%;
-
 }
 
-#open_book {
+ /* Stylowanie sekcji ministry_order_view */
+.ministry_army_order_view{
+    flex-direction: column;
     position: absolute;
-    top: 25%;
-    left: 50%;
-    transform: translateX(-50%);
-    height: 67%;
+    align-items: center;
+    flex: 1;
+    top: 13%;
+    width: 100%;
+}
+#book_container{
+    display: flex;
+    order: 4;
+    border: 5px solid green;
+    width: 100%;
+    justify-content: center;
+}
+
+ #open_book {
+     transform: translateY(-20%);
+    width: 100%;
+    order: 4;
+
+    
 }
 .ministry_army_order_view img{
-    position: absolute;
-    top: 13%;
-    left: 50%;
-    transform: translateX(-50%);
+ 
+    transform: translateY(4%);
+    order: 1;
     
 }
 .ministry_army_order_view h3{
-    position: absolute;
-    top: 27%;
-    left: 50%;
-    transform: translateX(-50%);
     font-size: 7rem;
     z-index: 1;
     text-shadow: 5px 5px 5px rgb(0, 0, 0);
     font-weight: 400;
+    order: 2;
 }
 .ministry_army_order_view h4{
-    position: absolute;
-    top: 41%;
-    left: 25%;
+    position: relative;
     font-size: 3rem;
-    z-index: 1;
     font-weight: 400;
     color: black;
-    
+    order: 3;
+    transform: translateY(170%);
+    right:13%;
 
 }
 #members{
     display: grid;
     grid-template-columns: auto auto;
     grid-column-gap: 25rem;
-    left: 29%;
     position: absolute;
     text-align: center;
-    top: 45%;
+    top: 44%;  
     list-style: none;
-    
+    order: 5;
 }
+
 #members li{
-    font-size: 2rem;
+    font-size: 1.8rem;
     color: black;
 }
 /* Spells section */

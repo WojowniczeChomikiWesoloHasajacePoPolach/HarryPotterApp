@@ -599,16 +599,3 @@ async function ArmyMembers(houseName){
     }
 }
 
-//  menu herbowe- niedziałające 
-if(herb_menu.children[0].style.display != 'none'){
-    herb_menu.children[0].addEventListener('click',() =>{
-        main_house.remove();
-            resetLandingPage();
-            SlytherinView();
-    })
-};
-
-// function removeHouse(){
-//     main_house.remove;
-
-// }

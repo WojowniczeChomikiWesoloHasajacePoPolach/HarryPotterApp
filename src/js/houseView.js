@@ -201,7 +201,7 @@ async function HufflepuffView(){
     main_house.style.display = "block"
     back_page.style.display = 'inline-block'
     herb_menu.style.display = "block"
-    herb_menu.children[0].style.display = "none"
+    herb_menu.children[3].style.display = "none"
     teach_spells.style.width='50%'
     houseName.innerHTML = "Hufflepuff";
     const herbImg = document.createElement('img');
@@ -222,7 +222,7 @@ async function RavenclawView(){
     main_house.style.display = "block"
     back_page.style.display = 'inline-block'
     herb_menu.style.display = "block"
-    herb_menu.children[0].style.display = "none"
+    herb_menu.children[2].style.display = "none"
     teach_spells.style.width='50%'
     houseName.innerHTML = "Ravenclaw";
     const herbImg = document.createElement('img');
@@ -245,6 +245,7 @@ const SlytherinClick = herbs.children[0];
 const GryffindorClick = herbs.children[1];
 const HufflepuffClick = herbs.children[2];
 const RavenclawClick = herbs.children[3];
+
 
 SlytherinClick.addEventListener('click',() => {
     resetLandingPage();
@@ -269,6 +270,7 @@ SlytherinClick.addEventListener('click',() => {
         ArmyMembers("Slytherin");
     });
 });
+
 
 GryffindorClick.addEventListener('click',() => {
     resetLandingPage();
@@ -559,11 +561,17 @@ async function ArmyMembers(houseName){
         membersList.appendChild(listEl);
     }
 }
-// Przełącznie widoków domów przy użyciu małych hrebów klasy .hreb_menu
 
-const hrebMenuSlyt = document.querySelector('h_sl');
+//  menu herbowe- niedziałające 
+if(herb_menu.children[0].style.display != 'none'){
+    herb_menu.children[0].addEventListener('click',() =>{
+        main_house.remove();
+            resetLandingPage();
+            SlytherinView();
+    })
+};
 
-hrebMenuSlyt.addEventListener('click',()=>{
-    resetLandingPage();
-    SlytherinView();
-})
+// function removeHouse(){
+//     main_house.remove;
+
+// }

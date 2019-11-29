@@ -419,10 +419,6 @@ header h3:last-of-type{
 /* Students view and elements in it */
 .studentsView {
     height: 100%;
-    /* border:10px solid greenyellow ; */
-    /* background-size: auto; */
-    /* flex-wrap: wrap; */
-    /* background-image: url("images/f9d7af29e8b87e7bdbc81609503036d1.jpg"); */
 }
 .studentsView h3{
     position: absolute;
@@ -446,14 +442,12 @@ header h3:last-of-type{
     position: absolute;
     top:40%;
     z-index: -1;
-    /* border: 5px solid goldenrod; */
 }
 .scroll_students{
     display: flex;
     flex-direction: column;
     align-items: center;
     width: 50%;
-    /* border: 3px solid blue; */
 }
 .scroll_students img{
     width: 100%;
@@ -476,7 +470,6 @@ header h3:last-of-type{
     padding-top: 7%;
     font-size: 3rem;
     list-style: none;
-    /* border: 2px solid green; */
     height: 45%;
     width: 45%;
 }
@@ -488,7 +481,8 @@ header h3:last-of-type{
 }
 
  /* Stylowanie sekcji ministry_order_view */
-.ministry_army_order_view{
+
+ .ministry_army_order_view{
     flex-direction: column;
     position: absolute;
     align-items: center;
@@ -496,27 +490,19 @@ header h3:last-of-type{
     top: 13%;
     width: 100%;
 }
-#book_container{
-    display: flex;
-    order: 4;
-    border: 5px solid green;
-    width: 100%;
-    justify-content: center;
-}
 
  #open_book {
      transform: translateY(-20%);
     width: 100%;
     order: 4;
-
-    
+    z-index: -1;
 }
+
 .ministry_army_order_view img{
- 
     transform: translateY(4%);
     order: 1;
-    
 }
+
 .ministry_army_order_view h3{
     font-size: 7rem;
     z-index: 1;
@@ -532,22 +518,41 @@ header h3:last-of-type{
     order: 3;
     transform: translateY(170%);
     right:13%;
+    z-index: 1;
 
 }
+#book_container{
+    display: flex;
+    position: relative;
+    order: 4;
+    width: 100%;
+    justify-content: center;
+}
+
 #members{
-    display: grid;
-    grid-template-columns: auto auto;
-    grid-column-gap: 25rem;
+    display: flex;
+    flex-wrap: wrap;
     position: absolute;
+    width:52%;
     text-align: center;
-    top: 44%;  
+    top: 10%;  
     list-style: none;
-    order: 5;
 }
 
 #members li{
+    width: 50%;
     font-size: 1.8rem;
     color: black;
+}
+#seal{
+    position: absolute;
+    height: 15%;
+    top: 25%;
+}
+#message{
+    position: absolute;
+    top: 35%;
+    font-size: 5rem;
 }
 /* Spells section */
 .main_spells_image{

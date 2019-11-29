@@ -533,32 +533,69 @@ async function ArmyView(){
 }
 
 // Funckje zwracające  członków danego ugrupowania z podziałem na domy
+const bookContainer = document.getElementById('book_container');
 
 async function MinistryMembers(houseName){
     const ministryMembers = await getMinistryOfMagicMembers(houseName); 
-    console.log(ministryMembers)       ;
-    for(let i = 0; i<ministryMembers.length; i++){
-        let listEl = document.createElement('li');
+    console.log(ministryMembers);
+    if(ministryMembers.length == 0){
+        let seal = document.createElement('img');
+        let message = document.createElement('h3');
+        seal.setAttribute('src','images/hogwartSeal.png');
+        seal.setAttribute('id','seal');
+        message.setAttribute('id','message');
+        message.innerText= 'No members found';
+        bookContainer.appendChild(seal);
+        bookContainer.appendChild(message);
+
+    }else {
+        for(let i = 0; i<ministryMembers.length; i++){
+            let listEl = document.createElement('li');
             listEl.innerText = `${ministryMembers[i].name}`;
-      membersList.appendChild(listEl);
+            membersList.appendChild(listEl);
+        }
     }
 }
 async function OrderMembers(houseName){
     const orderMembers = await getHouseOrderOfThePhoenixMembers(houseName);
     console.log(orderMembers);
-    for(let i = 0; i<orderMembers.length; i++){
-        let listEl = document.createElement('li');
-        listEl.innerText = `${orderMembers[i].name}`;
-        membersList.appendChild(listEl);
+    if(orderMembers.length == 0){
+        let seal = document.createElement('img');
+        let message = document.createElement('h3');
+        seal.setAttribute('src','images/hogwartSeal.png');
+        seal.setAttribute('id','seal');
+        message.setAttribute('id','message');
+        message.innerText= 'No members found';
+        bookContainer.appendChild(seal);
+        bookContainer.appendChild(message);
+
+    }else{
+        for(let i = 0; i<orderMembers.length; i++){
+            let listEl = document.createElement('li');
+            listEl.innerText = `${orderMembers[i].name}`;
+            membersList.appendChild(listEl);
+        }
     }
 }
 async function ArmyMembers(houseName){
     const armyMembers= await  getHouseDumbledoresArmyMembers(houseName);
-        console.log(armyMembers);
-        for(let i = 0; i<armyMembers.length; i++){
+    console.log(armyMembers);
+    if(armyMembers.length == 0){
+        let seal = document.createElement('img');
+        let message = document.createElement('h3');
+        seal.setAttribute('src','images/hogwartSeal.png');
+        seal.setAttribute('id','seal');
+        message.setAttribute('id','message');
+        message.innerText= 'No members found';
+        bookContainer.appendChild(seal);
+        bookContainer.appendChild(message);
+
+    }else {   
+         for(let i = 0; i<armyMembers.length; i++){
         let listEl = document.createElement('li');
         listEl.innerText = `${armyMembers[i].name}`;
         membersList.appendChild(listEl);
+        }
     }
 }
 

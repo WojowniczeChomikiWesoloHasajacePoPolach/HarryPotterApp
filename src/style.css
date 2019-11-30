@@ -70,7 +70,7 @@ nav{
     top:30%;
     right:5%;
     display:flex;
-    width:30%;
+    width:40%;
     align-items:center;
     justify-content:space-around;
 }
@@ -89,12 +89,14 @@ nav{
 }
 
 .teach_spells .teachers span {
-    right:67%;
+    right:55%;
 }
 .teach_spells .spells span {
     right:17%;
 }
-
+.teach_spells .characters span {
+    right:97%;
+}
 
 header{
     font-size:2.7rem;
@@ -214,7 +216,7 @@ header h3:last-of-type{
     left:50%;
     text-shadow:2px 2px 3px #FA6900;
 }
-.main_teachers, .main_spells{
+.main_teachers, .main_spells, .main_characters{
     position:relative;
     height:100%;
     font-size:4rem;
@@ -227,7 +229,7 @@ header h3:last-of-type{
     transform:translateX(-20%);
     height:15vw;
 }
-.main_teachers h3, .main_spells h3{
+.main_teachers h3, .main_spells h3, .main_characters h3{
     position:absolute;
     top:28%;
     left:50%;
@@ -281,7 +283,7 @@ header h3:last-of-type{
     color:black;
 }
 
-.btn_teachers:hover, .btn_spells:hover{
+.btn_teachers:hover, .btn_spells:hover, .button_species:hover, .button_role:hover{
     cursor:pointer;
     filter:drop-shadow(2px 2px 0 rgb(245, 248, 71))
     drop-shadow(-2px 2px 0 rgb(245, 248, 71))
@@ -459,4 +461,106 @@ teacher_li li{
 .spells_list_title p {
     color:black;
     font-size: 1.5rem;
+}
+.main_characters .scroll {
+    background-image: url("images/scroll.png");
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: center;
+    width: 70%;
+    height: 55%;
+    position: absolute;
+    top:45%;
+    left:50%;
+    transform:translateX(-50%);
+}
+.char_btn {
+    position: absolute;
+    top: 40%;
+    transform: translateX(-50%);
+    font-size: 5rem;
+}
+#species {
+    left: 30%;
+}
+#role {
+    right: 20%;
+}
+.species_list, .role_list{
+    position:absolute;
+    top:20%;
+    left:50%;
+    transform: translateX(-50%);
+    color:black;
+    text-shadow:none;
+    font-size: 4rem;
+    flex-direction: column;
+    height: 20%;
+    width: auto;
+}
+.button_species, .button_role{
+    background-color: transparent;
+    outline:none;
+    border:none;
+    color:black;
+    font-size: 4rem;
+}
+#role:hover, #species:hover, .listed_element:hover, .back_from_char:hover{
+    cursor: pointer;
+    filter: drop-shadow(2px 2px 0 rgb(231, 108, 7))
+    drop-shadow(-2px 2px 0 rgb(223, 122, 6))
+    drop-shadow(2px -2px 0 white)
+    drop-shadow(-2px -2px 0 white);
+}
+.elements_list {
+    position:absolute;
+    top: 25%;
+    left: 20%;
+    display: flex;
+    flex-wrap:wrap;
+
+}
+.listed_element {
+    width: 50%;
+    font-size: 3.5rem;
+    color: black;
+
+}
+.next, .prev {
+    position: absolute;
+    background-color: transparent;
+    border: none;
+    font-size: 3rem;
+    top: 70%;
+    color: black;
+}
+.next {
+    left: 60%;
+}
+.prev {
+    left: 30%;
+}
+.next:hover, .prev:hover {
+    cursor: pointer;
+    filter: drop-shadow(2px 2px 0 rgb(231, 108, 7))
+    drop-shadow(-2px 2px 0 rgb(223, 122, 6))
+    drop-shadow(2px -2px 0 white)
+    drop-shadow(-2px -2px 0 white);
+}
+.character_params {
+    position: absolute;
+    top: 30%;
+    left: 20%;
+    font-size: 3rem;
+}
+.character_params > li {
+    color:black;
+}
+.back_from_char {
+    background: transparent;
+    border: none;
+    font-size: 3rem;
+    position: absolute;
+    top: 70%;
+    left: 60%;
 }

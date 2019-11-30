@@ -15,6 +15,7 @@
                 <a href="#" class="back_page" style="display: none;"><h3>Back</h3></a>
             </div>
             <div class="teach_spells">
+                    <a href="#" class="characters"><span>Characters</span></a>
                     <a href="#" class="teachers"><img src="images/descarga.png" class="main_feather" alt="Blue Feather"><span>Teachers</span></a>
                     <a href="#" class="spells"><img src="images/book-of-shadows.png" class="main_book_shadow" alt="Spells Book"><span>Spells</span></a>
                     <div class = "herb_menu" style="display:none;">
@@ -109,11 +110,33 @@
             <div style='display:none;' class='spells_list'>
             </div>
         </div>
+        <div class="main_characters" style="display:none;">
+            <h3>Characters</h3>
+            <div class="scroll">
+                    <div class="char_btn" id="species">Species</div>
+                    <div class="species_list" style="display:none;">
+                        <div class="species_label">Species</div>
+                        <button class="button_species" id="human">Humans</button>
+                        <button class="button_species" id="ghost">Ghosts</button>
+                        <button class="button_species" id="creature">Creatures</button>
+                    </div>
+                    <div class="char_btn" id="role">Role</div>
+                    <div class="role_list" style="display:none;">
+                        <div class="role_label">Role</div>
+                        <button class="button_role" id="students">Students</button>
+                        <button class="button_role" id="teachers">Teachers</button>
+                    </div>
+                    <button class="next" style="display:none;">Next</button>
+                    <button class="prev" style="display:none;">Prev</button>
+                    <button class="back_from_char" style="display:none;">Back</button>
+                </div>
+        </div>
 
     </main>
     <script src="js/HarryPotterAPI.js"></script>
     <script src="js/teachers.js"></script>
     <script src="js/houseView.js"></script>
     <script src='js/spellsView.js'></script>
+    <script src="js/charactersView.js"></script>
 </body>
 </html>

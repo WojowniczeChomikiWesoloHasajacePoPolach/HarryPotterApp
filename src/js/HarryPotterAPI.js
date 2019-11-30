@@ -116,8 +116,6 @@ async function getResponse(URL) {
     let URL = "https://www.potterapi.com/v1/characters?house=Hufflepuff&key=$2a$10$HHO4w0IzBGVFiVzfmvOV6.KVRaloeOOGZAyhOrTHO8vyLGjge1gAG";
     const hufflepuffMembers = await getResponse(URL);
     return hufflepuffMembers
-    const hafflepuffMembers = await getResponse(URL);
-    return hafflepuffMembers
   }
   //Funkcja zwracająca tablicę członków Dumbledore Army z danego domu, jako argument nazwa domu
   async function getHouseDumbledoresArmyMembers(houseName) {

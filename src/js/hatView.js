@@ -34,37 +34,42 @@ Hra.addEventListener('click',() => {
     setTimeout( () => {RavenclawView()}, 3000);
     setTimeout( () => {animationDomIn()}, 3000);
 });
-// Alternatywa dla przycisków od studentów, armii, ,ministerstwa i zakonu
+// Alternatywa dla przycisków od studentów, armii, ,ministerstwa i zakonu i studentów
 students.lastElementChild.addEventListener('click',() =>{
     resetLandingPage();
-    if (back[back.length - 1] == 'gr'){ return GryffindorStudentsView()};
-    if (back[back.length - 1] == 'sl'){ return SlytherinStudentsView()};
-    if (back[back.length - 1] == 'hu'){ return HufflepuffStudentsView()};
-    if (back[back.length - 1] == 'ra'){ return RavenclawStudentsView()};
+    if (back[back.length - 1] == 'Gryffindor'){ return GryffindorStudentsView()};
+    if (back[back.length - 1] == 'Slytherin'){ return SlytherinStudentsView()};
+    if (back[back.length - 1] == 'Hufflepuff'){ return HufflepuffStudentsView()};
+    if (back[back.length - 1] == 'Ravenclaw'){ return RavenclawStudentsView()};
 });
 blockButtons.children[0].addEventListener('click',() =>{
     resetLandingPage();
     MinistryView();
-    if (back[back.length - 1] == 'gr'){ return MinistryMembers("Gryffindor")};
-    if (back[back.length - 1] == 'sl'){ return MinistryMembers("Slytherin")};
-    if (back[back.length - 1] == 'hu'){ return MinistryMembers("Hufflepuff")};
-    if (back[back.length - 1] == 'ra'){ return MinistryMembers("Ravenclaw")};
+    MinistryMembers(back[back.length - 2]);
+   
+    //if (back[back.length - 1] == 'sl'){back.push('MiSl'); return MinistryMembers("Slytherin")};
+    //if (back[back.length - 1] == 'hu'){back.push('MiHu'); return MinistryMembers("Hufflepuff")};
+    //if (back[back.length - 1] == 'ra'){back.push('MiRa'); return MinistryMembers("Ravenclaw")};
 });
 blockButtons.children[1].addEventListener('click',() =>{
     resetLandingPage();
     OrderView();
-    if (back[back.length - 1] == 'gr'){ return OrderMembers("Gryffindor")};
-    if (back[back.length - 1] == 'sl'){ return OrderMembers("Slytherin")};
-    if (back[back.length - 1] == 'hu'){ return OrderMembers("Hufflepuff")};
-    if (back[back.length - 1] == 'ra'){ return OrderMembers("Ravenclaw")};
+    OrderMembers(back[back.length - 2]);
+    
+    //if (back[back.length - 1] == 'gr'){back.push('OrGr'); return OrderMembers("Gryffindor")};
+    //if (back[back.length - 1] == 'sl'){back.push('OrSl'); return OrderMembers("Slytherin")};
+    //if (back[back.length - 1] == 'hu'){back.push('OrHu'); return OrderMembers("Hufflepuff")};
+    //if (back[back.length - 1] == 'ra'){back.push('OrRa'); return OrderMembers("Ravenclaw")};
 });
 blockButtons.children[2].addEventListener('click',() =>{
     resetLandingPage();
     ArmyView();
-    if (back[back.length - 1] == 'gr'){ return ArmyMembers("Gryffindor")};
-    if (back[back.length - 1] == 'sl'){ return ArmyMembers("Slytherin")};
-    if (back[back.length - 1] == 'hu'){ return ArmyMembers("Hufflepuff")};
-    if (back[back.length - 1] == 'ra'){ return ArmyMembers("Ravenclaw")};
+    ArmyMembers(back[back.length - 2]);
+    
+    //if (back[back.length - 1] == 'gr'){back.push('ArGr'); return ArmyMembers("Gryffindor")};
+    //if (back[back.length - 1] == 'sl'){back.push('ArSl'); return ArmyMembers("Slytherin")};
+    //if (back[back.length - 1] == 'hu'){back.push('ArHu'); return ArmyMembers("Hufflepuff")};
+    //if (back[back.length - 1] == 'ra'){back.push('ArRa'); return ArmyMembers("Ravenclaw")};
 });
 
 async function randomView(){
@@ -124,20 +129,32 @@ landingPage.addEventListener('click',() => {
 
 
 
-
+//Back Button
 async function backingBack(){
     const i = back.length - 2;
-    if (back[i] == 'ra') { return zzz()};
-    if (back[i] == 'hu') { return resetLandingPage(), await HufflepuffView();};
-    if (back[i] == 'sl') { return resetLandingPage(), await SlytherinView();};
-    if (back[i] == 'gr') { return resetLandingPage(), await GryffindorView();};
+    if (back[i] == 'Ravenclaw') { return AnRav()};
+    if (back[i] == 'Hufflepuff') { return resetLandingPage(), await HufflepuffView();};
+    if (back[i] == 'Slytherin') { return resetLandingPage(), await SlytherinView();};
+    if (back[i] == 'Gryffindor') { return resetLandingPage(), await GryffindorView();};
     if (back[i] == 'main') { return resetMainPage(), await LandingPage()};
     if (back[i] == 'spells') { return resetLandingPage(), spellsView()};
     if (back[i] == 'teachers') { return resetLandingPage(), teachersView()};
-
-   
+    if (back[i] == 'StGr') { return resetLandingPage(), GryffindorStudentsView()};
+    if (back[i] == 'StSl') { return resetLandingPage(), SlytherinStudentsView()};
+    if (back[i] == 'StHu') { return resetLandingPage(), HufflepuffStudentsView()};
+    if (back[i] == 'StRa') { return resetLandingPage(), RavenclawStudentsView()};
+    if (back[i] == removeChar(back[i]) + 'Ar') { return ArmyView(), ArmyMembers(removeChar(back[i]));}
+    if (back[i] == removeChar(back[i]) + 'Or') { return ArmyView(), OrderMembers(removeChar(back[i]));}
+    if (back[i] == removeChar(back[i]) + 'Mi') { return ArmyView(), MinistryMembers(removeChar(back[i]));}
+    
+    
+    function removeChar(str) {
+        return str.slice(0, -2);
+    }
 }
-function zzz(){
+
+
+function AnRav(){
         animationDomRevIn();
         setTimeout( () => {resetLandingPage()}, 3000);
         setTimeout( () => {RavenclawView()}, 3000);
@@ -151,7 +168,7 @@ backPage.addEventListener('click',() => {
 });
 
 
-
+// Przzejścia
 function animationDomOut() {
     main_house.style.animation = 'domOut 3s';
 };

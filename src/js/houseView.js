@@ -148,7 +148,7 @@ async function getSlytherinMembers() {
 // Widoki domów
 
 async function SlytherinView(){
-    back.push('sl')
+    back.push('Slytherin')
     main_house.style.display = "block"
     back_page.style.display = 'inline-block'
     herb_menu.style.display = "flex"
@@ -172,7 +172,7 @@ async function SlytherinView(){
 };
 
 async function GryffindorView(){
-    back.push('gr')
+    back.push('Gryffindor')
     main_house.style.display = "block"
     back_page.style.display = 'inline-block'
     herb_menu.style.display = "flex"
@@ -195,7 +195,7 @@ async function GryffindorView(){
 };
 
 async function HufflepuffView(){
-    back.push('hu')
+    back.push('Hufflepuff')
     main_house.style.display = "block"
     back_page.style.display = 'inline-block'
     herb_menu.style.display = "flex"
@@ -218,7 +218,7 @@ async function HufflepuffView(){
 };
 
 async function RavenclawView(){
-    back.push('ra')
+    back.push('Ravenclaw')
     main_house.style.display = "block"
     back_page.style.display = 'inline-block'
     herb_menu.style.display = "flex"
@@ -247,101 +247,7 @@ const GryffindorClick = herbs.children[1];
 const HufflepuffClick = herbs.children[2];
 const RavenclawClick = herbs.children[3];
 
-SlytherinClick.addEventListener('click',() => {
-    resetLandingPage();
-    SlytherinView();
-    students.lastElementChild.addEventListener('click',() =>{
-        resetLandingPage();
-        SlytherinStudentsView();
-    });
-    blockButtons.children[0].addEventListener('click',() =>{
-        resetLandingPage();
-        MinistryView();
-        MinistryMembers("Slytherin");
-    });
-    blockButtons.children[1].addEventListener('click',() =>{
-        resetLandingPage();
-        OrderView();
-        OrderMembers("Slytherin");
-    });
-    blockButtons.children[2].addEventListener('click',() =>{
-        resetLandingPage();
-        ArmyView();
-        ArmyMembers("Slytherin");
-    });
-});
 
-GryffindorClick.addEventListener('click',() => {
-    resetLandingPage();
-    GryffindorView();
-    students.lastElementChild.addEventListener('click',() =>{
-        resetLandingPage();
-        GryffindorStudentsView();
-    });
-    blockButtons.children[0].addEventListener('click',() =>{
-        resetLandingPage();
-        MinistryView();
-        MinistryMembers("Gryffindor");
-    });
-    blockButtons.children[1].addEventListener('click',() =>{
-        resetLandingPage();
-        OrderView();
-        OrderMembers("Gryffindor");
-    });
-    blockButtons.children[2].addEventListener('click',() =>{
-        resetLandingPage();
-        ArmyView();
-        ArmyMembers("Gryffindor");
-    });
-});
-
-HufflepuffClick.addEventListener('click',() => {
-    resetLandingPage();
-    HufflepuffView();
-    students.lastElementChild.addEventListener('click',() =>{
-        resetLandingPage();
-        HufflepuffStudentsView();
-    });
-    blockButtons.children[0].addEventListener('click',() =>{
-        resetLandingPage();
-        MinistryView();
-        MinistryMembers("Hufflepuff");
-    });
-    blockButtons.children[1].addEventListener('click',() =>{
-        resetLandingPage();
-        OrderView();
-        OrderMembers("Hufflepuff");
-    });
-    blockButtons.children[2].addEventListener('click',() =>{
-        resetLandingPage();
-        ArmyView();
-        ArmyMembers("Hufflepuff");
-    });
-});
-
-RavenclawClick.addEventListener('click',() => {
-    resetLandingPage();
-    RavenclawView();
-    students.lastElementChild.addEventListener('click',() =>{
-        resetLandingPage();
-        RavenclawStudentsView();
-    });
-    blockButtons.children[0].addEventListener('click',() =>{
-        resetLandingPage();
-        MinistryView();
-        MinistryMembers("Ravenclaw");
-    });
-    blockButtons.children[1].addEventListener('click',() =>{
-        resetLandingPage();
-        OrderView();
-        OrderMembers("Ravenclaw");
-    });
-    blockButtons.children[2].addEventListener('click',() =>{
-        resetLandingPage();
-        ArmyView();
-        ArmyMembers("Ravenclaw");
-    });
-});
 
 // Students view
 const studentView = document.querySelector('.studentsView');
@@ -351,7 +257,8 @@ const halfBloodList = document.querySelector('.halfBlood');
 
 // Funkcje zwracające widok studentów danego domu
 
-async function SlytherinStudentsView(){
+async function SlytherinStudentsView(){    
+    back.push('StSl');
     main_house.style.display = "none"
     teach_spells.style.width='35%'
     studentView.style.display='block'
@@ -370,6 +277,7 @@ async function SlytherinStudentsView(){
 }
 
 async function GryffindorStudentsView(){
+    back.push('StGr');
     main_house.style.display = "none"
     teach_spells.style.width='35%'
     studentView.style.display='block'
@@ -387,6 +295,7 @@ async function GryffindorStudentsView(){
 }
 
 async function HufflepuffStudentsView(){
+    back.push('StHu');
     main_house.style.display = "none"
     teach_spells.style.width='35%'
     studentView.style.display='block'
@@ -404,6 +313,7 @@ async function HufflepuffStudentsView(){
 }
 
 async function RavenclawStudentsView(){
+    back.push('StRa');
     main_house.style.display = "none"
     teach_spells.style.width='35%'
     studentView.style.display='block'
@@ -428,6 +338,7 @@ const membersList = document.getElementById('members');
 
 
 async function MinistryView(){
+    back.push(back[back.length - 1] +'Mi');
     main_house.style.display = "none"
     teach_spells.style.width='35%'
     miArOr.style.display = 'block';
@@ -441,6 +352,7 @@ async function MinistryView(){
 }
 
 async function OrderView(){
+    back.push(back[back.length - 1] +'Or');
     main_house.style.display = "none"
     teach_spells.style.width='35%'
     miArOr.style.display = 'block';
@@ -455,6 +367,7 @@ async function OrderView(){
 }
 
 async function ArmyView(){
+    back.push(back[back.length - 1] + 'Ar');
     main_house.style.display = "none"
     teach_spells.style.width='35%'
     miArOr.style.display = 'block';

@@ -19,10 +19,12 @@ btn_spells.addEventListener('click', spellsListAll);
 
 
 function spellsView(){
+    back.push('spells')
     main_spells.style.display='block';
     back_page.style.display = 'inline-block';
-    herb_menu.style.display = 'block';
+    herb_menu.style.display = 'flex';
     teach_spells.style.width='50%';
+    
 };
 
 function displaySpellsList() {

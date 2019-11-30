@@ -9,6 +9,26 @@ const Hhu = document.querySelector(".h_hu");
 
 let back = ['main'];
 
+SlytherinClick.addEventListener('click',() => {
+    resetLandingPage();
+    SlytherinView();
+});
+
+GryffindorClick.addEventListener('click',() => {
+    resetLandingPage();
+    GryffindorView();
+});
+
+HufflepuffClick.addEventListener('click',() => {
+    resetLandingPage();
+    HufflepuffView();
+});
+
+RavenclawClick.addEventListener('click',() => {
+    resetLandingPage();
+    RavenclawView();
+});
+
 
 Hsl.addEventListener('click',() => {
     animationDomOut();

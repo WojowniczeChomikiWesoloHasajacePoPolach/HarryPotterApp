@@ -664,15 +664,24 @@ header h3:last-of-type{
 
 /*Dodanie animacji przechodzenia pomiędzy domami */
 @keyframes domOut {
-    from {right: 0px;}
+    from {right: 0;}
     to {right: 100vw;}
 }
 
 @keyframes domIn {
     from {left: 100vw;}
-    to {left: 0px;}
+    to {left: 0;}
 }
 
+@keyframes domRevOut {
+    from {right: 100vw;}
+    to {right: 0;}
+}
+
+@keyframes domRevIn {
+    from {left: 0;}
+    to {left: 100vw;}
+}
 /*Dodanie animacji Sorting hat*/
 
 @keyframes anHat {

@@ -25,15 +25,52 @@ async function getResponse(URL) {
     return response
   }
 
-function resetLandingPage(){
-const shiftCss = 
-spells.style.display ="none"
-teach.style.display="none"
-header.style.display = 'none'
-herbs.style.display = 'none'
-main_house.style.display = 'none'
-main_button.style.display = 'none'
-main_spells.style.display = 'none'
+//function resetLandingPage(){
+//const shiftCss = 
+//spells.style.display ="none"
+//teach.style.display="none"
+//header.style.display = 'none'
+//herbs.style.display = 'none'
+//main_house.style.display = 'none'
+//main_button.style.display = 'none'
+//main_spells.style.display = 'none'
+//};
+
+async function resetLandingPage(){
+  const houseHerb = document.querySelectorAll(".house_herb");
+  const miArOrImg = document.querySelectorAll(".ministry_army_order_view img:nth-of-type(2)");
+  const miArOrh4 =  document.querySelectorAll(".ministry_army_order_view h4");
+  const miArOrLi =  document.querySelectorAll(".ministry_army_order_view li");
+  const studentLi =  document.querySelectorAll(".scroll_container li");
+  const shiftCss = 
+  spells.style.display ="none"
+  teach.style.display="none"
+  header.style.display = 'none'
+  herbs.style.display = 'none'
+  main_house.style.display = 'none'
+  main_button.style.display = 'none'
+  main_teachers.style.display = 'none'
+  main_spells.style.display = 'none'
+  miArOr.style.display = 'none'
+  studentView.style.display='none'
+  for (let i = 0; i < houseHerb.length; i++){
+      houseHerb[i].remove()
+  };
+  for (let i = 0; i < miArOrImg.length; i++){
+      miArOrImg[i].remove()
+  };
+  for (let i = 0; i < miArOrh4.length; i++){
+      miArOrh4[i].remove()
+  };
+  for (let i = 0; i < miArOrLi.length; i++){
+    miArOrLi[i].remove()
+  };
+  for (let i = 0; i < studentLi.length; i++){
+    studentLi[i].remove()
+  };
+  for (let i = 0; i < herb_menu.children.length; i++){
+      herb_menu.children[i].style.display = 'block'
+  };
 };
 
 function teachersView(){
@@ -92,8 +129,8 @@ function showAllProfesorsUsingApi(){
 
     }
 
-teach.addEventListener('click', teachersView);
 teach.addEventListener('click', resetLandingPage);
+teach.addEventListener('click', teachersView);
 btn_teachers.addEventListener('click', showAllProfesorsUsingApi);
 main_logo.addEventListener('click', checkedIfLoad);
 wizard.addEventListener('mouseenter', letWizardSpeak);

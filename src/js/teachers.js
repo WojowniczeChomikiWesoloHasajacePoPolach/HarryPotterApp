@@ -45,6 +45,7 @@ async function resetLandingPage(){
   const shiftCss = 
   spells.style.display ="none"
   teach.style.display="none"
+  characters.style.display = "none"
   header.style.display = 'none'
   herbs.style.display = 'none'
   main_house.style.display = 'none'

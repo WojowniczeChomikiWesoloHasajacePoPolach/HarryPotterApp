@@ -115,6 +115,7 @@ async function resetMainPage(){
     const shiftCss = 
     spells.style.display ="none"
     teach.style.display="none"
+    characters.style.display = "none"
     header.style.display = 'none'
     herbs.style.display = 'none'
     herb_menu.style.display = 'none'
@@ -131,6 +132,7 @@ async function LandingPage(){
     back.push('main');
     const shiftCss = 
     teach_spells.style.width='30%'
+    characters.style.display = "block";
     spells.style.display ="block"
     teach.style.display="block"
     header.style.display = "block"

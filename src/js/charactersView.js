@@ -13,7 +13,6 @@ const scroll = main_characters.querySelector('.scroll');
 const p = main_characters.querySelector('#p');
 const next = main_characters.querySelector(".next");
 const prev = main_characters.querySelector(".prev");
-const back = document.querySelector(".back_page");
 const backFromChar = main_characters.querySelector(".back_from_char")
 
 let actualPage = 0;
@@ -221,14 +220,6 @@ prev.addEventListener('click', () => {
     let elementsList = document.querySelector(".elements_list");
     elementsList.parentNode.removeChild(elementsList);
     clickPrevButton(tempArrayForCharacters);
-});
-back.addEventListener('click', () => {
-    showMainPage();
-    let elementsList = document.querySelector(".elements_list");
-    elementsList.parentNode.removeChild(elementsList);
-    actualPage = 0;
-    next.style.display = "none";
-    prev.style.display = "none";
 });
 
 

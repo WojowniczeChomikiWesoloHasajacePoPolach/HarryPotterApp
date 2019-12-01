@@ -6,6 +6,13 @@ const Hsl = document.querySelector(".h_sl");
 const Hgr = document.querySelector(".h_gr");
 const Hra = document.querySelector(".h_ra");
 const Hhu = document.querySelector(".h_hu");
+// Buttony poszczególnych domów
+
+const SlytherinClick = herbs.children[0];
+const GryffindorClick = herbs.children[1];
+const HufflepuffClick = herbs.children[2];
+const RavenclawClick = herbs.children[3];
+
 
 let back = ['main'];
 
@@ -66,30 +73,18 @@ blockButtons.children[0].addEventListener('click',() =>{
     resetLandingPage();
     MinistryView();
     MinistryMembers(back[back.length - 2]);
-   
-    //if (back[back.length - 1] == 'sl'){back.push('MiSl'); return MinistryMembers("Slytherin")};
-    //if (back[back.length - 1] == 'hu'){back.push('MiHu'); return MinistryMembers("Hufflepuff")};
-    //if (back[back.length - 1] == 'ra'){back.push('MiRa'); return MinistryMembers("Ravenclaw")};
 });
+
 blockButtons.children[1].addEventListener('click',() =>{
     resetLandingPage();
     OrderView();
     OrderMembers(back[back.length - 2]);
-    
-    //if (back[back.length - 1] == 'gr'){back.push('OrGr'); return OrderMembers("Gryffindor")};
-    //if (back[back.length - 1] == 'sl'){back.push('OrSl'); return OrderMembers("Slytherin")};
-    //if (back[back.length - 1] == 'hu'){back.push('OrHu'); return OrderMembers("Hufflepuff")};
-    //if (back[back.length - 1] == 'ra'){back.push('OrRa'); return OrderMembers("Ravenclaw")};
 });
+
 blockButtons.children[2].addEventListener('click',() =>{
     resetLandingPage();
     ArmyView();
     ArmyMembers(back[back.length - 2]);
-    
-    //if (back[back.length - 1] == 'gr'){back.push('ArGr'); return ArmyMembers("Gryffindor")};
-    //if (back[back.length - 1] == 'sl'){back.push('ArSl'); return ArmyMembers("Slytherin")};
-    //if (back[back.length - 1] == 'hu'){back.push('ArHu'); return ArmyMembers("Hufflepuff")};
-    //if (back[back.length - 1] == 'ra'){back.push('ArRa'); return ArmyMembers("Ravenclaw")};
 });
 
 async function randomView(){
@@ -99,7 +94,6 @@ async function randomView(){
     if (rand == 2) { return await HufflepuffView()};
     if (rand == 3) { return await SlytherinView()};
     if (rand == 4) { return await GryffindorView()};
-    
 }
 
 hat.addEventListener('click',() => {
@@ -167,9 +161,9 @@ async function backingBack(){
     if (back[i] == 'StSl') { return resetLandingPage(), SlytherinStudentsView()};
     if (back[i] == 'StHu') { return resetLandingPage(), HufflepuffStudentsView()};
     if (back[i] == 'StRa') { return resetLandingPage(), RavenclawStudentsView()};
-    if (back[i] == removeChar(back[i]) + 'Ar') { return ArmyView(), ArmyMembers(removeChar(back[i]));}
-    if (back[i] == removeChar(back[i]) + 'Or') { return ArmyView(), OrderMembers(removeChar(back[i]));}
-    if (back[i] == removeChar(back[i]) + 'Mi') { return ArmyView(), MinistryMembers(removeChar(back[i]));}
+    if (back[i] == removeChar(back[i]) + 'Ar') { return resetLandingPage(), ArmyView(), ArmyMembers(removeChar(back[i]));}
+    if (back[i] == removeChar(back[i]) + 'Or') { return resetLandingPage(), OrderView(), OrderMembers(removeChar(back[i]));}
+    if (back[i] == removeChar(back[i]) + 'Mi') { return resetLandingPage(), MinistryView(), MinistryMembers(removeChar(back[i]));}
     if (back[i] == 'characters') {return resetLandingPage (), charactersView()};
     
     

@@ -240,6 +240,7 @@ async function RavenclawView(){
     
 };
 
+<<<<<<< HEAD
 // Buttony poszczególnych domów
 
 const SlytherinClick = herbs.children[0];
@@ -345,6 +346,8 @@ RavenclawClick.addEventListener('click',() => {
   });
 });
 
+=======
+>>>>>>> upstream/master
 // Students view
 const studentView = document.querySelector('.studentsView');
 const pureBloodList = document.querySelector('.pureBlood');

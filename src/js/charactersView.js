@@ -192,7 +192,8 @@ teachersList.addEventListener('click', async () => {
 async function showCharacter(id) {
     next.style.display = "none";
     prev.style.display = "none";
-    backFromChar.style.display = "block";
+    backFromList.style.display = "none";
+    backFromChar.style.display = "inline";
     let elementsList = document.querySelector(".elements_list");
     elementsList.parentNode.removeChild(elementsList);
     let character = await getCharacter(`${id}`);
@@ -227,17 +228,18 @@ backFromChar.addEventListener('click', () => {
     showElementsList(actualPage, tempArrayForCharacters);
     pageNumbers = countPages(tempArrayForCharacters);
     showPageButtons(pageNumbers);
+    backFromList.style.display = "block";
 });
 backFromList.addEventListener('click', () => {
     let elementsList = document.querySelector(".elements_list");
     elementsList.parentNode.removeChild(elementsList);
-    backFromList.style.display="none";
     next.style.display = "none";
     prev.style.display = "none";
     if(char_title.innerHTML == "Students" || char_title.innerHTML == "Teachers") {
         showRole();
     }
     else {showSpecies()};
+    backFromList.style.display="none";
     char_title.innerHTML = "";
     actualPage = 0;
 });

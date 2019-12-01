@@ -707,7 +707,7 @@ header h3:last-of-type{
 }
 .species_list, .role_list{
     position:absolute;
-    top:20%;
+    top:30%;
     left:50%;
     transform: translateX(-50%);
     color:black;
@@ -724,7 +724,7 @@ header h3:last-of-type{
     color:black;
     font-size: 4rem;
 }
-#role:hover, #species:hover, .listed_element:hover, .back_from_char:hover, .back_from_list, .back_from_category{
+#role:hover, #species:hover, .listed_element:hover{
     cursor: pointer;
     filter: drop-shadow(2px 2px 0 rgb(231, 108, 7))
     drop-shadow(-2px 2px 0 rgb(223, 122, 6))
@@ -780,7 +780,7 @@ header h3:last-of-type{
     border: none;
     font-size: 3rem;
     position: absolute;
-    top: 70%;
+    top: 75%;
     left: 60%;
 }
 .back_from_list {
@@ -798,6 +798,13 @@ header h3:last-of-type{
     position: absolute;
     top: 85%;
     left: 45%;
+}
+.back_from_char:hover, .back_from_list:hover, .back_from_category:hover{
+    cursor: pointer;
+    filter: drop-shadow(2px 2px 0 rgb(231, 108, 7))
+    drop-shadow(-2px 2px 0 rgb(223, 122, 6))
+    drop-shadow(2px -2px 0 white)
+    drop-shadow(-2px -2px 0 white);
 }
 .char_title {
     position: absolute;

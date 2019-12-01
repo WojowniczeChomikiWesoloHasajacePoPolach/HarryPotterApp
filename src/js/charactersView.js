@@ -13,44 +13,44 @@ const scroll = main_characters.querySelector('.scroll');
 const p = main_characters.querySelector('#p');
 const next = main_characters.querySelector(".next");
 const prev = main_characters.querySelector(".prev");
-const backFromChar = main_characters.querySelector(".back_from_char")
+const backFromChar = main_characters.querySelector(".back_from_char");
+const backFromList = main_characters.querySelector(".back_from_list");
+const backFromCategory = main_characters.querySelector(".back_from_category");
+const removeEverything = document.querySelector('.landing_page');
+const char_title = main_characters.querySelector(".char_title");
 
 let actualPage = 0;
 let pageNumbers = 1;
 let tempArrayForCharacters = [];
 
-function resetLandingPage(){
-    spells.style.display ="none"
-    teach.style.display="none"
-    header.style.display = 'none'
-    herbs.style.display = 'none'
-    main_button.style.display = 'none'
-    characters.style.display = "none"
-};
 function charactersView(){
-    main_characters.style.display="block"
-    back_page.style.display = 'inline-block'
-    herb_menu.style.display = "block"
+    main_characters.style.display="block";
+    back_page.style.display = 'inline-block';
+    herb_menu.style.display = "flex";
     teach_spells.style.width='50%'
+    back.push("characters");
+    showMainCharacterPage();
 };
-function resetMainPage() {
+function resetMainCharacterPage() {
     species.style.display = "none";
     role.style.display = "none";
 };
-function showMainPage() {
+function showMainCharacterPage() {
     species.style.display = "block";
     role.style.display = "block";
 }
-function resetSecondPage() {
-    resetMainPage();
+function resetSecondCharacterPage() {
+    resetMainCharacterPage();
     species_list.style.display = "none";
     role_list.style.display = "none";
 }
 function showSpecies() {
     species_list.style.display = "flex";
+    backFromCategory.style.display = "block";
 };
 function showRole() {
     role_list.style.display = "flex";
+    backFromCategory.style.display = "block";
 }
 function showPageButtons(pageNumbers) {
     if(actualPage < (pageNumbers-1)){
@@ -116,59 +116,77 @@ async function pageElements(array) {
 characters.addEventListener('click', () => {
     resetLandingPage();
     charactersView();
+    actualPage = 0;
+
 });
 
 species.addEventListener('click', () => {
-    resetMainPage();
+    resetMainCharacterPage();
     showSpecies();
 });
-role.addEventListener('click', () => {
-    resetMainPage();
+role.addEventListener('click', async () => {
+    resetMainCharacterPage();
     showRole();
+
 });
 humans.addEventListener('click',async  () => {
-    resetSecondPage();
+    resetSecondCharacterPage()
     let humans = await getHumans();
     tempArrayForCharacters = humans;
     showElementsList(actualPage, humans);
     pageNumbers = countPages(humans);
     showPageButtons(pageNumbers);
+    char_title.innerHTML = "Humans";
+    backFromList.style.display = "block";
+    backFromCategory.style.display = "none";
     return humans
     });
 ghosts.addEventListener('click', async () => {
-    resetSecondPage();
+    resetSecondCharacterPage()
     let ghosts = await getGhosts();
     tempArrayForCharacters = ghosts;
     showElementsList(actualPage, ghosts);
     pageNumbers = countPages(ghosts);
     showPageButtons(pageNumbers);
+    char_title.innerHTML = "Ghosts";
+    backFromList.style.display = "block";
+    backFromCategory.style.display = "none";
     return ghosts
 });
 creatures.addEventListener('click', async () => {
-    resetSecondPage();
+    resetSecondCharacterPage()
     let creatures = await getCreatures();
     tempArrayForCharacters = creatures;
     showElementsList(actualPage, creatures);
     pageNumbers = countPages(creatures);
     showPageButtons(pageNumbers);
+    char_title.innerHTML = "Creatures";
+    backFromList.style.display = "block";
+    backFromCategory.style.display = "none";
     return creatures
 });
 studentsList.addEventListener('click', async () => {
-    resetSecondPage();
+    resetSecondCharacterPage()
     let students = await getStudents();
     tempArrayForCharacters = students;
     showElementsList(actualPage, students);
     pageNumbers = countPages(students);
     showPageButtons(pageNumbers);
+    char_title.innerHTML = "Students";
+    backFromList.style.display = "block";
+    backFromCategory.style.display = "none";
     return students
 });
 teachersList.addEventListener('click', async () => {
-    resetSecondPage();
+    resetSecondCharacterPage()
     let teachers = await getTeachers();
     tempArrayForCharacters = teachers;
     showElementsList(actualPage, teachers);
     pageNumbers = countPages(teachers);
     showPageButtons(pageNumbers);
+    char_title.innerHTML = "Teachers";
+    backFromList.style.display = "block";
+    backFromCategory.style.display = "none";
     return teachers
 });
 async function showCharacter(id) {
@@ -210,6 +228,26 @@ backFromChar.addEventListener('click', () => {
     pageNumbers = countPages(tempArrayForCharacters);
     showPageButtons(pageNumbers);
 });
+backFromList.addEventListener('click', () => {
+    let elementsList = document.querySelector(".elements_list");
+    elementsList.parentNode.removeChild(elementsList);
+    backFromList.style.display="none";
+    next.style.display = "none";
+    prev.style.display = "none";
+    if(char_title.innerHTML == "Students" || char_title.innerHTML == "Teachers") {
+        showRole();
+    }
+    else {showSpecies()};
+    char_title.innerHTML = "";
+    actualPage = 0;
+});
+backFromCategory.addEventListener('click', () => {
+    species_list.style.display = "none";
+    role_list.style.display = "none";
+    backFromCategory.style.display = "none";
+    showMainCharacterPage();
+
+});
 next.addEventListener('click', () => {
     let elementsList = document.querySelector(".elements_list");
     elementsList.parentNode.removeChild(elementsList);
@@ -221,5 +259,20 @@ prev.addEventListener('click', () => {
     elementsList.parentNode.removeChild(elementsList);
     clickPrevButton(tempArrayForCharacters);
 });
+removeEverything.addEventListener('click', () => {
+    resetSecondCharacterPage()
+    let characterParams = document.querySelector(".character_params");
+    if (characterParams != null){
+    characterParams.parentNode.removeChild(characterParams);
+    }
+    backFromChar.style.display = "none";
+    let elementsList = document.querySelector(".elements_list");
+    if (elementsList != null) {
+    elementsList.parentNode.removeChild(elementsList);
+    }
+    next.style.display = "none";
+    prev.style.display = "none";
+    char_title.innerHTML = "";
+})
 
 

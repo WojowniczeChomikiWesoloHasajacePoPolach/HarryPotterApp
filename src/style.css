@@ -706,7 +706,7 @@ header h3:last-of-type{
     color:black;
     font-size: 4rem;
 }
-#role:hover, #species:hover, .listed_element:hover, .back_from_char:hover{
+#role:hover, #species:hover, .listed_element:hover, .back_from_char:hover, .back_from_list, .back_from_category{
     cursor: pointer;
     filter: drop-shadow(2px 2px 0 rgb(231, 108, 7))
     drop-shadow(-2px 2px 0 rgb(223, 122, 6))
@@ -715,7 +715,7 @@ header h3:last-of-type{
 }
 .elements_list {
     position:absolute;
-    top: 25%;
+    top: 30%;
     left: 20%;
     display: flex;
     flex-wrap:wrap;
@@ -764,6 +764,27 @@ header h3:last-of-type{
     position: absolute;
     top: 70%;
     left: 60%;
+}
+.back_from_list {
+    background: transparent;
+    border: none;
+    font-size: 3rem;
+    position: absolute;
+    top: 75%;
+    left: 45%;
+}
+.back_from_category {
+    background: transparent;
+    border: none;
+    font-size: 3rem;
+    position: absolute;
+    top: 85%;
+    left: 45%;
+}
+.char_title {
+    position: absolute;
+    top:15%;
+    left: 40%;
 }
 
 /*Dodanie animacji przechodzenia pomiędzy domami */

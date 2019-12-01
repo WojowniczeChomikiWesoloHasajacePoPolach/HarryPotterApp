@@ -125,7 +125,9 @@ async function resetMainPage(){
     back_page.style.display = 'none'
     miArOr.style.display = 'none'
     studentView.style.display='none'
-    };
+    main_characters.style.display = "none"
+    char_title.innerHTML = "";
+};
 
 
 async function LandingPage(){
@@ -168,6 +170,7 @@ async function backingBack(){
     if (back[i] == removeChar(back[i]) + 'Ar') { return ArmyView(), ArmyMembers(removeChar(back[i]));}
     if (back[i] == removeChar(back[i]) + 'Or') { return ArmyView(), OrderMembers(removeChar(back[i]));}
     if (back[i] == removeChar(back[i]) + 'Mi') { return ArmyView(), MinistryMembers(removeChar(back[i]));}
+    if (back[i] == 'characters') {return resetLandingPage (), charactersView()};
     
     
     function removeChar(str) {

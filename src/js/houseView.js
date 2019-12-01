@@ -247,6 +247,7 @@ const GryffindorClick = herbs.children[1];
 const HufflepuffClick = herbs.children[2];
 const RavenclawClick = herbs.children[3];
 
+
 SlytherinClick.addEventListener('click',() => {
   resetLandingPage();
   SlytherinView();
@@ -270,6 +271,7 @@ SlytherinClick.addEventListener('click',() => {
       ArmyMembers("Slytherin");
   });
 });
+
 
 GryffindorClick.addEventListener('click',() => {
   resetLandingPage();
@@ -347,17 +349,20 @@ RavenclawClick.addEventListener('click',() => {
 const studentView = document.querySelector('.studentsView');
 const pureBloodList = document.querySelector('.pureBlood');
 const halfBloodList = document.querySelector('.halfBlood');
+const unknownBloodList= document.getElementById('unknownBlood');
+const muggleBornList = document.getElementById('muggleBorn');
 
 
 // Funkcje zwracające widok studentów danego domu
 
+
 async function SlytherinStudentsView(){    
     back.push('StSl');
+    studentView.style.display='flex'
+
     main_house.style.display = "none"
     teach_spells.style.width='35%'
-    studentView.style.display='block'
     const members = await getSlytherinMembers();
-    console.log(members);
     for(let i = 0; i<members.length;i++){
         const listEl = document.createElement('li');
         if((members[i].role == "student" || members[i].role == "Student") && members[i].bloodStatus == "pure-blood"){
@@ -366,6 +371,21 @@ async function SlytherinStudentsView(){
         }else if((members[i].role == "student" || members[i].role == "Student") && members[i].bloodStatus == "half-blood"){
             listEl.innerText = `${members[i].name}`;
             halfBloodList.appendChild(listEl);
+        }else if((members[i].role == "student" || members[i].role == "Student") && members[i].bloodStatus == "muggle-born"){
+            listEl.innerText = `${members[i].name}`;
+            muggleBornList.appendChild(listEl);
+        }else if((members[i].role == "student" || members[i].role == "Student") && members[i].bloodStatus == "unknown"){
+            listEl.innerText = `${members[i].name}`;
+            unknownBloodList.appendChild(listEl);
+       }
+    }
+    let arrayList = [pureBloodList,halfBloodList,muggleBornList,unknownBloodList];
+    let alert = document.createElement('li');
+    alert.setAttribute('class','alert');
+    alert.innerText= 'No students found';
+    for(let i=0; i<arrayList.length; i++){
+        if(arrayList[i].children.length == 0){
+            arrayList[i].appendChild(alert);
         }
     }
 }
@@ -374,7 +394,7 @@ async function GryffindorStudentsView(){
     back.push('StGr');
     main_house.style.display = "none"
     teach_spells.style.width='35%'
-    studentView.style.display='block'
+    studentView.style.display='flex'
     const members = await getGryffindorMembers();
     for(let i = 0; i<members.length;i++){
         const listEl = document.createElement('li');
@@ -384,6 +404,21 @@ async function GryffindorStudentsView(){
         }else if((members[i].role == "student" || members[i].role == "Student") && members[i].bloodStatus == "half-blood"){
             listEl.innerText = `${members[i].name}`;
             halfBloodList.appendChild(listEl);
+        }else if((members[i].role == "student" || members[i].role == "Student") && members[i].bloodStatus == "muggle-born"){
+            listEl.innerText = `${members[i].name}`;
+            muggleBornList.appendChild(listEl);
+        }else if((members[i].role == "student" || members[i].role == "Student") && members[i].bloodStatus == "unknown"){
+            listEl.innerText = `${members[i].name}`;
+            unknownBloodList.appendChild(listEl);
+       }
+    }
+    let arrayList = [pureBloodList,halfBloodList,muggleBornList,unknownBloodList];
+    let alert = document.createElement('li');
+    alert.setAttribute('class','alert');
+    alert.innerText= 'No students found';
+    for(let i=0; i<arrayList.length; i++){
+        if(arrayList[i].children.length == 0){
+            arrayList[i].appendChild(alert);
         }
     }
 }
@@ -392,7 +427,7 @@ async function HufflepuffStudentsView(){
     back.push('StHu');
     main_house.style.display = "none"
     teach_spells.style.width='35%'
-    studentView.style.display='block'
+    studentView.style.display='flex'
     const members = await getHufflepuffMembers();
     for(let i = 0; i<members.length;i++){
         const listEl = document.createElement('li');
@@ -402,6 +437,21 @@ async function HufflepuffStudentsView(){
         }else if((members[i].role == "student" || members[i].role == "Student") && members[i].bloodStatus == "half-blood"){
             listEl.innerText = `${members[i].name}`;
             halfBloodList.appendChild(listEl);
+        }else if((members[i].role == "student" || members[i].role == "Student") && members[i].bloodStatus == "muggle-born"){
+            listEl.innerText = `${members[i].name}`;
+            muggleBornList.appendChild(listEl);
+        }else if((members[i].role == "student" || members[i].role == "Student") && members[i].bloodStatus == "unknown"){
+            listEl.innerText = `${members[i].name}`;
+            unknownBloodList.appendChild(listEl);
+       }
+    }
+    let arrayList = [pureBloodList,halfBloodList,muggleBornList,unknownBloodList];
+    let alert = document.createElement('li');
+    alert.setAttribute('class','alert');
+    alert.innerText= 'No students found';
+    for(let i=0; i<arrayList.length; i++){
+        if(arrayList[i].children.length == 0){
+            arrayList[i].appendChild(alert);
         }
     }
 }
@@ -410,7 +460,7 @@ async function RavenclawStudentsView(){
     back.push('StRa');
     main_house.style.display = "none"
     teach_spells.style.width='35%'
-    studentView.style.display='block'
+    studentView.style.display='flex'
     const members = await getRavenclawMembers();
     for(let i = 0; i<members.length;i++){
         const listEl = document.createElement('li');
@@ -420,6 +470,21 @@ async function RavenclawStudentsView(){
         }else if((members[i].role == "student" || members[i].role == "Student") && members[i].bloodStatus == "half-blood"){
             listEl.innerText = `${members[i].name}`;
             halfBloodList.appendChild(listEl);
+        }else if((members[i].role == "student" || members[i].role == "Student") && members[i].bloodStatus == "muggle-born"){
+            listEl.innerText = `${members[i].name}`;
+            muggleBornList.appendChild(listEl);
+        }else if((members[i].role == "student" || members[i].role == "Student") && members[i].bloodStatus == "unknown"){
+            listEl.innerText = `${members[i].name}`;
+            unknownBloodList.appendChild(listEl);
+       }
+    }
+    let arrayList = [pureBloodList,halfBloodList,muggleBornList,unknownBloodList];
+    let alert = document.createElement('li');
+    alert.setAttribute('class','alert');
+    alert.innerText= 'No students found';
+    for(let i=0; i<arrayList.length; i++){
+        if(arrayList[i].children.length == 0){
+            arrayList[i].appendChild(alert);
         }
     }
 }
@@ -435,7 +500,7 @@ async function MinistryView(){
     back.push(back[back.length - 1] +'Mi');
     main_house.style.display = "none"
     teach_spells.style.width='35%'
-    miArOr.style.display = 'block';
+    miArOr.style.display = 'flex';
     const ministryImg = document.createElement('img');
     ministryImg.setAttribute('src', 'images/snowy-owl-clipart-harry-potter-10.png');
     miArOr.appendChild(ministryImg);
@@ -449,7 +514,7 @@ async function OrderView(){
     back.push(back[back.length - 1] +'Or');
     main_house.style.display = "none"
     teach_spells.style.width='35%'
-    miArOr.style.display = 'block';
+    miArOr.style.display = 'flex';
     const orderImg = document.createElement('img');
     orderImg.setAttribute('src', 'images/Fenix_2.png');
     miArOr.appendChild(orderImg);
@@ -464,7 +529,7 @@ async function ArmyView(){
     back.push(back[back.length - 1] + 'Ar');
     main_house.style.display = "none"
     teach_spells.style.width='35%'
-    miArOr.style.display = 'block';
+    miArOr.style.display = 'flex';
     const armyImg = document.createElement('img');
     armyImg.setAttribute('src', 'images/Water_Magic_Wand.png');
     miArOr.appendChild(armyImg);
@@ -476,31 +541,66 @@ async function ArmyView(){
 }
 
 // Funckje zwracające  członków danego ugrupowania z podziałem na domy
+const bookContainer = document.getElementById('book_container');
 
 async function MinistryMembers(houseName){
     const ministryMembers = await getMinistryOfMagicMembers(houseName); 
-    console.log(ministryMembers)       ;
-    for(let i = 0; i<ministryMembers.length; i++){
-        let listEl = document.createElement('li');
+    if(ministryMembers.length == 0){
+        let seal = document.createElement('img');
+        let message = document.createElement('h3');
+        seal.setAttribute('src','images/hogwartSeal.png');
+        seal.setAttribute('id','seal');
+        message.setAttribute('id','message');
+        message.innerText= 'No members found';
+        bookContainer.appendChild(seal);
+        bookContainer.appendChild(message);
+
+    }else {
+        for(let i = 0; i<ministryMembers.length; i++){
+            let listEl = document.createElement('li');
             listEl.innerText = `${ministryMembers[i].name}`;
-      membersList.appendChild(listEl);
+            membersList.appendChild(listEl);
+        }
     }
 }
 async function OrderMembers(houseName){
     const orderMembers = await getHouseOrderOfThePhoenixMembers(houseName);
-    console.log(orderMembers);
-    for(let i = 0; i<orderMembers.length; i++){
-        let listEl = document.createElement('li');
-        listEl.innerText = `${orderMembers[i].name}`;
-        membersList.appendChild(listEl);
+    if(orderMembers.length == 0){
+        let seal = document.createElement('img');
+        let message = document.createElement('h3');
+        seal.setAttribute('src','images/hogwartSeal.png');
+        seal.setAttribute('id','seal');
+        message.setAttribute('id','message');
+        message.innerText= 'No members found';
+        bookContainer.appendChild(seal);
+        bookContainer.appendChild(message);
+
+    }else{
+        for(let i = 0; i<orderMembers.length; i++){
+            let listEl = document.createElement('li');
+            listEl.innerText = `${orderMembers[i].name}`;
+            membersList.appendChild(listEl);
+        }
     }
 }
 async function ArmyMembers(houseName){
     const armyMembers= await  getHouseDumbledoresArmyMembers(houseName);
-        console.log(armyMembers);
-        for(let i = 0; i<armyMembers.length; i++){
+    if(armyMembers.length == 0){
+        let seal = document.createElement('img');
+        let message = document.createElement('h3');
+        seal.setAttribute('src','images/hogwartSeal.png');
+        seal.setAttribute('id','seal');
+        message.setAttribute('id','message');
+        message.innerText= 'No members found';
+        bookContainer.appendChild(seal);
+        bookContainer.appendChild(message);
+
+    }else {   
+         for(let i = 0; i<armyMembers.length; i++){
         let listEl = document.createElement('li');
         listEl.innerText = `${armyMembers[i].name}`;
         membersList.appendChild(listEl);
+        }
     }
 }
+

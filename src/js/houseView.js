@@ -240,15 +240,6 @@ async function RavenclawView(){
     
 };
 
-// Buttony poszczególnych domów
-
-const SlytherinClick = herbs.children[0];
-const GryffindorClick = herbs.children[1];
-const HufflepuffClick = herbs.children[2];
-const RavenclawClick = herbs.children[3];
-
-
-
 // Students view
 const studentView = document.querySelector('.studentsView');
 const pureBloodList = document.querySelector('.pureBlood');

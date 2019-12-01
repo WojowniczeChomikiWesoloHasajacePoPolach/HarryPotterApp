@@ -115,6 +115,7 @@ async function resetMainPage(){
     const shiftCss = 
     spells.style.display ="none"
     teach.style.display="none"
+    characters.style.display = "none"
     header.style.display = 'none'
     herbs.style.display = 'none'
     herb_menu.style.display = 'none'
@@ -124,13 +125,16 @@ async function resetMainPage(){
     back_page.style.display = 'none'
     miArOr.style.display = 'none'
     studentView.style.display='none'
-    };
+    main_characters.style.display = "none"
+    char_title.innerHTML = "";
+};
 
 
 async function LandingPage(){
     back.push('main');
     const shiftCss = 
     teach_spells.style.width='30%'
+    characters.style.display = "block";
     spells.style.display ="block"
     teach.style.display="block"
     header.style.display = "block"
@@ -166,6 +170,7 @@ async function backingBack(){
     if (back[i] == removeChar(back[i]) + 'Ar') { return ArmyView(), ArmyMembers(removeChar(back[i]));}
     if (back[i] == removeChar(back[i]) + 'Or') { return ArmyView(), OrderMembers(removeChar(back[i]));}
     if (back[i] == removeChar(back[i]) + 'Mi') { return ArmyView(), MinistryMembers(removeChar(back[i]));}
+    if (back[i] == 'characters') {return resetLandingPage (), charactersView()};
     
     
     function removeChar(str) {

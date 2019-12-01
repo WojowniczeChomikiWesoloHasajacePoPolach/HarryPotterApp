@@ -45,14 +45,31 @@ async function resetLandingPage(){
   const shiftCss = 
   spells.style.display ="none"
   teach.style.display="none"
+  characters.style.display = "none"
   header.style.display = 'none'
   herbs.style.display = 'none'
   main_house.style.display = 'none'
   main_button.style.display = 'none'
   main_teachers.style.display = 'none'
   main_spells.style.display = 'none'
+  main_characters.style.display = "none"
   miArOr.style.display = 'none'
   studentView.style.display='none'
+  species.style.display = "none"
+  role.style.display = "none"
+  species_list.style.display = "none"
+  role_list.style.display = "none"
+  let characterParams = document.querySelector(".character_params");
+  if (characterParams != null){
+    characterParams.parentNode.removeChild(characterParams);
+  }
+  backFromChar.style.display = "none";
+  let elementsList = document.querySelector(".elements_list");
+  if (elementsList != null) {
+  elementsList.parentNode.removeChild(elementsList);
+  }
+  next.style.display = "none";
+  prev.style.display = "none";
   for (let i = 0; i < houseHerb.length; i++){
       houseHerb[i].remove()
   };

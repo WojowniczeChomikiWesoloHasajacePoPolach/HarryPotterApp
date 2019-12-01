@@ -31,28 +31,28 @@ RavenclawClick.addEventListener('click',() => {
 
 
 Hsl.addEventListener('click',() => {
-    //animationDomOut();
-    setTimeout( () => {resetLandingPage()}, 000);
-    setTimeout( () => {SlytherinView()}, 000);
-    //setTimeout( () => {animationDomIn()}, 3000);
+    animationDomOut();
+    setTimeout( () => {resetLandingPage()}, 3000);
+    setTimeout( () => {SlytherinView()}, 3000);
+    setTimeout( () => {animationDomIn()}, 3000);
 });
 Hgr.addEventListener('click',() => {
-    //animationDomOut();
-    setTimeout( () => {resetLandingPage()}, 000);
-    setTimeout( () => {GryffindorView()}, 000);
-    //setTimeout( () => {animationDomIn()}, 3000);
+    animationDomOut();
+    setTimeout( () => {resetLandingPage()}, 3000);
+    setTimeout( () => {GryffindorView()}, 3000);
+    setTimeout( () => {animationDomIn()}, 3000);
 });
 Hhu.addEventListener('click',() => {
-   // animationDomOut();
-    setTimeout( () => {resetLandingPage()}, 000);
-    setTimeout( () => {HufflepuffView()}, 000);
-    //setTimeout( () => {animationDomIn()}, 3000);
+    animationDomOut();
+    setTimeout( () => {resetLandingPage()}, 3000);
+    setTimeout( () => {HufflepuffView()}, 3000);
+    setTimeout( () => {animationDomIn()}, 3000);
 });
 Hra.addEventListener('click',() => {
-    //animationDomOut();
-    setTimeout( () => {resetLandingPage()}, 000);
-    setTimeout( () => {RavenclawView()}, 000);
-    //setTimeout( () => {animationDomIn()}, 3000);
+    animationDomOut();
+    setTimeout( () => {resetLandingPage()}, 3000);
+    setTimeout( () => {RavenclawView()}, 3000);
+    setTimeout( () => {animationDomIn()}, 3000);
 });
 // Alternatywa dla przycisków od studentów, armii, ,ministerstwa i zakonu i studentów
 students.lastElementChild.addEventListener('click',() =>{
@@ -103,10 +103,10 @@ async function randomView(){
 }
 
 hat.addEventListener('click',() => {
-    //revAnimationHat();
-    setTimeout( () => {resetLandingPage()}, 000);
-    setTimeout( () => {randomView()}, 000);
-   // setTimeout( () => {animationHat()}, 3000);
+    revAnimationHat();
+    setTimeout( () => {resetLandingPage()}, 3000);
+    setTimeout( () => {randomView()}, 3000);
+    setTimeout( () => {animationHat()}, 3000);
 });
 
 
@@ -180,10 +180,10 @@ async function backingBack(){
 
 
 function AnRav(){
-        //animationDomRevIn();
-        setTimeout( () => {resetLandingPage()}, 000);
-        setTimeout( () => {RavenclawView()}, 000);
-        //setTimeout( () => {animationDomRevOut()}, 3000);
+        animationDomRevIn();
+        setTimeout( () => {resetLandingPage()}, 3000);
+        setTimeout( () => {RavenclawView()}, 3000);
+        setTimeout( () => {animationDomRevOut()}, 3000);
 }
 
 backPage.addEventListener('click',() => {

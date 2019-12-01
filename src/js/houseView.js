@@ -248,6 +248,102 @@ const HufflepuffClick = herbs.children[2];
 const RavenclawClick = herbs.children[3];
 
 
+SlytherinClick.addEventListener('click',() => {
+  resetLandingPage();
+  SlytherinView();
+  students.lastElementChild.addEventListener('click',() =>{
+      resetLandingPage();
+      SlytherinStudentsView();
+  });
+  blockButtons.children[0].addEventListener('click',() =>{
+      resetLandingPage();
+      MinistryView();
+      MinistryMembers("Slytherin");
+  });
+  blockButtons.children[1].addEventListener('click',() =>{
+      resetLandingPage();
+      OrderView();
+      OrderMembers("Slytherin");
+  });
+  blockButtons.children[2].addEventListener('click',() =>{
+      resetLandingPage();
+      ArmyView();
+      ArmyMembers("Slytherin");
+  });
+});
+
+
+GryffindorClick.addEventListener('click',() => {
+  resetLandingPage();
+  GryffindorView();
+  students.lastElementChild.addEventListener('click',() =>{
+      resetLandingPage();
+      GryffindorStudentsView();
+  });
+  blockButtons.children[0].addEventListener('click',() =>{
+      resetLandingPage();
+      MinistryView();
+      MinistryMembers("Gryffindor");
+  });
+  blockButtons.children[1].addEventListener('click',() =>{
+      resetLandingPage();
+      OrderView();
+      OrderMembers("Gryffindor");
+  });
+  blockButtons.children[2].addEventListener('click',() =>{
+      resetLandingPage();
+      ArmyView();
+      ArmyMembers("Gryffindor");
+  });
+});
+
+HufflepuffClick.addEventListener('click',() => {
+  resetLandingPage();
+  HufflepuffView();
+  students.lastElementChild.addEventListener('click',() =>{
+      resetLandingPage();
+      HufflepuffStudentsView();
+  });
+  blockButtons.children[0].addEventListener('click',() =>{
+      resetLandingPage();
+      MinistryView();
+      MinistryMembers("Hufflepuff");
+  });
+  blockButtons.children[1].addEventListener('click',() =>{
+      resetLandingPage();
+      OrderView();
+      OrderMembers("Hufflepuff");
+  });
+  blockButtons.children[2].addEventListener('click',() =>{
+      resetLandingPage();
+      ArmyView();
+      ArmyMembers("Hufflepuff");
+  });
+});
+
+RavenclawClick.addEventListener('click',() => {
+  resetLandingPage();
+  RavenclawView();
+  students.lastElementChild.addEventListener('click',() =>{
+      resetLandingPage();
+      RavenclawStudentsView();
+  });
+  blockButtons.children[0].addEventListener('click',() =>{
+      resetLandingPage();
+      MinistryView();
+      MinistryMembers("Ravenclaw");
+  });
+  blockButtons.children[1].addEventListener('click',() =>{
+      resetLandingPage();
+      OrderView();
+      OrderMembers("Ravenclaw");
+  });
+  blockButtons.children[2].addEventListener('click',() =>{
+      resetLandingPage();
+      ArmyView();
+      ArmyMembers("Ravenclaw");
+  });
+});
 
 // Students view
 const studentView = document.querySelector('.studentsView');

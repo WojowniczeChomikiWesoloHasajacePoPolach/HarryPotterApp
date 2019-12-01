@@ -38,10 +38,12 @@ async function getResponse(URL) {
 
 async function resetLandingPage(){
   const houseHerb = document.querySelectorAll(".house_herb");
-  const miArOrImg = document.querySelectorAll(".ministry_army_order_view img:nth-of-type(2)");
+  const miArOrImg = document.querySelectorAll(".ministry_army_order_view > img");
   const miArOrh4 =  document.querySelectorAll(".ministry_army_order_view h4");
   const miArOrLi =  document.querySelectorAll(".ministry_army_order_view li");
   const studentLi =  document.querySelectorAll(".scroll_container li");
+  const seal =  document.querySelectorAll("#seal");
+  const message =  document.querySelectorAll("#message");
   const shiftCss = 
   spells.style.display ="none"
   teach.style.display="none"
@@ -84,6 +86,12 @@ async function resetLandingPage(){
   };
   for (let i = 0; i < studentLi.length; i++){
     studentLi[i].remove()
+  };
+  for (let i = 0; i < seal.length; i++){
+    seal[i].remove()
+  };
+  for (let i = 0; i < message.length; i++){
+    message[i].remove()
   };
   for (let i = 0; i < herb_menu.children.length; i++){
       herb_menu.children[i].style.display = 'block'

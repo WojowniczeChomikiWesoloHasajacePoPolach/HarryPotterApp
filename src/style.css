@@ -20,7 +20,7 @@ a{
 }
 body {
     background-image: url("images/f9d7af29e8b87e7bdbc81609503036d1.jpg");
-    background-size: auto;
+    background-size: cover;
     background-repeat: no-repeat;
 }
 main{

@@ -1,0 +1,25 @@
+{
+  "name": "HarryPotterApp",
+  "version": "1.0.0",
+  "description": "Signatures:\r 1. Witold Sterna\r 2. Kamil Zasada\r 3. Grafik z przymusu\r 4. Piotr Szydłowski\r 5. Izabela Kasza\r 6. Piotr Urbaniak\r 7. Radosław Legieta",
+  "main": "index.js",
+  "scripts": {
+    "dev": "webpack --mode development --watch",
+    "build": "webpack --mode production"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Fotsik/HarryPotterApp.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Fotsik/HarryPotterApp/issues"
+  },
+  "homepage": "https://github.com/Fotsik/HarryPotterApp#readme",
+  "devDependencies": {
+    "webpack": "^4.41.2",
+    "webpack-cli": "^3.3.10"
+  }
+}

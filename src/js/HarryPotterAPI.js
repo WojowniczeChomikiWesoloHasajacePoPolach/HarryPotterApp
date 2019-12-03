@@ -313,6 +313,22 @@ async function getResponse(URL) {
     }
     return creatures
   }
+  //Importowanie plikow js'a
+
+
+  // function includeJS(file) { 
+  //   var script  = document.createElement('script'); 
+  //   script.src  = file; 
+  //   script.type = 'text/javascript'; 
+  //   script.defer = true; 
+  //   document.getElementsByTagName('head').item(0).appendChild(script); 
+  // } 
+
+  // includeJS('charactersView.js'); 
+  // includeJS('hatView.js'); 
+  // includeJS('houseView.js');
+  // includeJS('spellsView.js');
+  // includeJS('teachers.js');
   
 
 

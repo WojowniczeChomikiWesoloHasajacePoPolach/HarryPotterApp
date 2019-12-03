@@ -1,4 +1,3 @@
-
 //funkcja wysyłająca zapytanie do API
 async function getResponse(URL) {
     let response;
@@ -26,7 +25,7 @@ async function getResponse(URL) {
       URL = encodeURI(URL+characterId+key);
       let character = await getResponse(URL)
   
-      return character[0]
+      return character
   }
   //funkcja zwracająca tablicę zaklęć
   async function getSpells() {
@@ -41,7 +40,7 @@ async function getResponse(URL) {
     URL = encodeURI(URL+spellId+key);
     let spell = await getResponse(URL)
   
-      return spell[0]
+      return spell
   }
   // funkcja zwracająca tablicę zawierającą nauczycieli
   async function getTeachers() {
@@ -61,7 +60,7 @@ async function getResponse(URL) {
       }
       }
     }
-    return console.log(teachers)
+    return teachers
   }
   //fukcja zwracająca tablicę studentów
   async function getStudents() {
@@ -92,7 +91,7 @@ async function getResponse(URL) {
     let key = "?key=$2a$10$HHO4w0IzBGVFiVzfmvOV6.KVRaloeOOGZAyhOrTHO8vyLGjge1gAG";
     URL = encodeURI(URL+houseId+key);
     let house = await getResponse(URL);
-    return house[0]
+    return house
   }
   //Członkowie Gryffindor
   async function getGryffindorMembers() {
@@ -113,10 +112,10 @@ async function getResponse(URL) {
     return slytherinMembers
   }
   //Członkowie Hafflepuff
-  async function getHafflepuffMembers() {
-    let URL = "https://www.potterapi.com/v1/characters?house=Hafflepuff&key=$2a$10$HHO4w0IzBGVFiVzfmvOV6.KVRaloeOOGZAyhOrTHO8vyLGjge1gAG";
-    const hafflepuffMembers = await getResponse(URL);
-    return hafflepuffMembers
+  async function getHufflepuffMembers() {
+    let URL = "https://www.potterapi.com/v1/characters?house=Hufflepuff&key=$2a$10$HHO4w0IzBGVFiVzfmvOV6.KVRaloeOOGZAyhOrTHO8vyLGjge1gAG";
+    const hufflepuffMembers = await getResponse(URL);
+    return hufflepuffMembers
   }
   //Funkcja zwracająca tablicę członków Dumbledore Army z danego domu, jako argument nazwa domu
   async function getHouseDumbledoresArmyMembers(houseName) {
@@ -131,8 +130,8 @@ async function getResponse(URL) {
       case "Ravenclaw":
         houseMembers = await getRavenclawMembers();
         break;
-      case "Hafflepuff":
-        houseMembers = await getHafflepuffMembers();
+      case "Hufflepuff":
+        houseMembers = await getHufflepuffMembers();
         break;
     }
    
@@ -163,8 +162,8 @@ async function getResponse(URL) {
       case "Ravenclaw":
         houseMembers = await getRavenclawMembers();
         break;
-      case "Hafflepuff":
-        houseMembers = await getHafflepuffMembers();
+      case "Hufflepuff":
+        houseMembers = await getHufflepuffMembers();
         break;
     }
    
@@ -195,8 +194,8 @@ async function getResponse(URL) {
       case "Ravenclaw":
         houseMembers = await getRavenclawMembers();
         break;
-      case "Hafflepuff":
-        houseMembers = await getHafflepuffMembers();
+      case "Hufflepuff":
+        houseMembers = await getHufflepuffMembers();
         break;
     }
    
@@ -250,7 +249,7 @@ async function getResponse(URL) {
   }
   //funkcja zwracająca tablicę wszystkich członków ministerstwa magii
   async function allMinistryOfMagicMembers() {
-    let MinistryOfMagicMembers = [];
+    let ministryOfMagicMembers = [];
     let characters = await getCharacters();
     for (let i=0; i < characters.length; i++) {
       if (characters[i].ministryOfMagic === undefined) {
@@ -265,6 +264,58 @@ async function getResponse(URL) {
     }
     return ministryOfMagicMembers
   }
+
+  async function getHumans() {
+    let characters = await getCharacters();
+    let humans = [];
+    for (let i=0; i < characters.length; i++) {
+      if (characters[i].species === undefined) {
+        continue
+      }
+      else if (characters[i].species === "human") {
+        humans.push(characters[i]) 
+      }
+      else {
+        continue
+      }
+    }
+    return humans
+  }
+  async function getGhosts() {
+    let characters = await getCharacters();
+    let ghosts = [];
+    for (let i=0; i < characters.length; i++) {
+      if (characters[i].species === undefined) {
+        continue
+      }
+      else if (characters[i].species === "ghost") {
+        ghosts.push(characters[i]) 
+      }
+      else {
+        continue
+      }
+    }
+    return ghosts
+  }
+  async function getCreatures() {
+    let characters = await getCharacters();
+    let creatures = [];
+    for (let i=0; i < characters.length; i++) {
+      if (characters[i].species === undefined) {
+        continue
+      }
+      else if (characters[i].species != "human" && characters[i].species != "ghost") {
+        creatures.push(characters[i]) 
+      }
+      else {
+        continue
+      }
+    }
+    return creatures
+  }
+  
+
+
   
   
   

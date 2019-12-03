@@ -11,6 +11,9 @@ const teach_spells = document.querySelector('.teach_spells');
 const btn_teachers = document.querySelector('.btn_teachers');
 const main_logo = document.querySelector('.landing_page');
 const teachers_list = document.querySelector('.teacher_list');
+const wizard = document.querySelector('img.wizard');
+const wizard_words = document.querySelector('.wizard_words')
+const witek = document.querySelector('.witek');
 const teachers = [];
 const listOfTeachers = [];
 
@@ -22,20 +25,78 @@ async function getResponse(URL) {
     return response
   }
 
-function resetLandingPage(){
-const shiftCss = 
-spells.style.display ="none"
-teach.style.display="none"
-header.style.display = 'none'
-herbs.style.display = 'none'
-main_button.style.display = 'none'
+//function resetLandingPage(){
+//const shiftCss = 
+//spells.style.display ="none"
+//teach.style.display="none"
+//header.style.display = 'none'
+//herbs.style.display = 'none'
+//main_house.style.display = 'none'
+//main_button.style.display = 'none'
+//main_spells.style.display = 'none'
+//};
+
+async function resetLandingPage(){
+  const houseHerb = document.querySelectorAll(".house_herb");
+  const miArOrImg = document.querySelectorAll(".ministry_army_order_view img:nth-of-type(2)");
+  const miArOrh4 =  document.querySelectorAll(".ministry_army_order_view h4");
+  const miArOrLi =  document.querySelectorAll(".ministry_army_order_view li");
+  const studentLi =  document.querySelectorAll(".scroll_container li");
+  const shiftCss = 
+  spells.style.display ="none"
+  teach.style.display="none"
+  characters.style.display = "none"
+  header.style.display = 'none'
+  herbs.style.display = 'none'
+  main_house.style.display = 'none'
+  main_button.style.display = 'none'
+  main_teachers.style.display = 'none'
+  main_spells.style.display = 'none'
+  main_characters.style.display = "none"
+  miArOr.style.display = 'none'
+  studentView.style.display='none'
+  species.style.display = "none"
+  role.style.display = "none"
+  species_list.style.display = "none"
+  role_list.style.display = "none"
+  let characterParams = document.querySelector(".character_params");
+  if (characterParams != null){
+    characterParams.parentNode.removeChild(characterParams);
+  }
+  backFromChar.style.display = "none";
+  let elementsList = document.querySelector(".elements_list");
+  if (elementsList != null) {
+  elementsList.parentNode.removeChild(elementsList);
+  }
+  next.style.display = "none";
+  prev.style.display = "none";
+  for (let i = 0; i < houseHerb.length; i++){
+      houseHerb[i].remove()
+  };
+  for (let i = 0; i < miArOrImg.length; i++){
+      miArOrImg[i].remove()
+  };
+  for (let i = 0; i < miArOrh4.length; i++){
+      miArOrh4[i].remove()
+  };
+  for (let i = 0; i < miArOrLi.length; i++){
+    miArOrLi[i].remove()
+  };
+  for (let i = 0; i < studentLi.length; i++){
+    studentLi[i].remove()
+  };
+  for (let i = 0; i < herb_menu.children.length; i++){
+      herb_menu.children[i].style.display = 'block'
+  };
 };
 
 function teachersView(){
+back.push('teachers')
 main_teachers.style.display="block"
 back_page.style.display = 'inline-block'
-herb_menu.style.display = "block"
+herb_menu.style.display = "flex"
 teach_spells.style.width='50%'
+
 };
 
 function showAllProfesorsUsingApi(){
@@ -64,20 +125,32 @@ function showAllProfesorsUsingApi(){
              const li = document.createElement('li')
              btn_teachers.style.display="none";
              teachers_list.appendChild(li);
-             teachers_list.style.display="block";
+             teachers_list.style.display="grid";
              li.innerHTML =`${x[i].name} ${x[i].role}`
+             let id = x[i]._id;
+             li.setAttribute("id", `${id}`);
+             wizard.style.display="block";
             }
             styleListOfTeachers();
           }
       }
       getTeachers();
     }
-
+    function letWizardSpeak(){
+      wizard_words.style.display="block";
+      witek.style.display="block";
+    }
+    function beQuiet(){
+      wizard_words.style.display="none";
+      witek.style.display ="none";
+    }
     function checkedIfLoad(){
 
     }
 
-teach.addEventListener('click', teachersView);
 teach.addEventListener('click', resetLandingPage);
+teach.addEventListener('click', teachersView);
 btn_teachers.addEventListener('click', showAllProfesorsUsingApi);
 main_logo.addEventListener('click', checkedIfLoad);
+wizard.addEventListener('mouseenter', letWizardSpeak);
+wizard.addEventListener('mouseout', beQuiet);

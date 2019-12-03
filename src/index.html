@@ -10,11 +10,12 @@
     <main>
         <nav>
             <div class="main_button">
-                <a href="index.html" class="landing_page"><img src="images/da5ykkd-3724e648-b930-4dda-bd42-39f557f83c75.png" alt="Herb of Hogwart" class="h_hogwart"></a>
+                <a href="#" class="landing_page"><img src="images/da5ykkd-3724e648-b930-4dda-bd42-39f557f83c75.png" alt="Herb of Hogwart" class="h_hogwart"></a>
                 <h3>HP</h3>
                 <a href="#" class="back_page" style="display: none;"><h3>Back</h3></a>
             </div>
             <div class="teach_spells">
+                    <a href="#" class="characters"><span>Characters</span></a>
                     <a href="#" class="teachers"><img src="images/descarga.png" class="main_feather" alt="Blue Feather"><span>Teachers</span></a>
                     <a href="#" class="spells"><img src="images/book-of-shadows.png" class="main_book_shadow" alt="Spells Book"><span>Spells</span></a>
                     <div class = "herb_menu" style="display:none;">
@@ -24,13 +25,13 @@
                         <a href="#"><img src="images/hufflepuff.png" alt="Hufflepuff" class="h_hu"></a>
                     </div>
                 </div>
-            
+
         </nav>
         <header>
-                <h1>Fan of Harry? Just try this!</h1>
-                <h3>Just choose one!</h3>
-                <h3>Cannot?</h3>
-                <h3>Pick<span> Sorting Hat!</span></h3>
+            <h1>Fan of Harry? Just try this!</h1>
+            <h3>Just choose one!</h3>
+            <h3>Cannot?</h3>
+            <h3>Pick<span> Sorting Hat!</span></h3>
         </header>
         <div class="herbs">
             <div class ="sl her">
@@ -58,11 +59,129 @@
         <h3>Teachers</h3>
         <img class='scroll' src="images/scroll.png">
         <h4>List of teachers</h4>
-        <button class="btn_teachers">Wanna see? Make a click!</button> 
+        <button class="btn_teachers">Wanna see? Make a click and hover it!</button> 
         <ul style="display:none;" class="teacher_list"></ul>
-    </div>
+        <img class="wizard" style="display:none;" src="images/Transparent_Wizard_PNG_Picture.png" alt="Img of Wizard">
+        <p class="wizard_words" style="display:none;">Welcome to Hogwart my dear!</p>
+        <p class="witek" style="display:none;">Najlepszy z nas - Witek</p>
+        </div>
+        <div class='main_house' style="display: none;">
+        <h3></h3>
+        <div class="house_info">
+            <div class="founder">Founder: <span></span></div>
+            <div class="head_house">Head Of House: <span></span></div>
+            <div class="house_ghost">House Ghost: <span></span></div>
+        </div>
+        <div class="house_buttons">
+            <div class="students">
+                <img src="images/Harry-Potter-Broom-Transparent-Background.png" alt="Broom">
+                <div>Students</div>
+            </div>
+            <div class="block_buttons">
+                <div class="ministry_of_magic">
+                    <img src= "images/snowy-owl-clipart-harry-potter-10.png">
+                    <p>Ministry Of Magic</p> 
+                </div>
+                <div class="order_of_the_phoenix">
+                    <img src= "images/Fenix_2.png">
+                    <p>Order Of The Phoenix</p> 
+                </div>
+                <div class="dumbledores_army">    
+                    <img src= "images/Water_Magic_Wand.png">
+                    <p>Dumbledore's Army</p>
+                </div>
+            </div>
+          </div>
+        </div>
+        <div class="studentsView" style="display:none;">
+            <h3>Students</h3>
+            <img src="images/Harry-Potter-Broom-Transparent-Background.png" alt="broom">
+            <div class="scroll_container">
+                <div class="scroll_students">
+                    <img  src="images/scroll.png" alt="scroll">
+                    <h4>List of PureBlood students</h4> 
+                    <ul class="pureBlood"></ul>
+                </div>
+                <div class="scroll_students">     
+                    <img src="images/scroll.png" alt="scroll">
+                    <h4>List of HalfBlood students</h4>
+                    <ul class="halfBlood"></ul>
+                </div>
+                <div class="scroll_students">
+                    <img src="images/scroll.png" alt="scroll">
+                    <h4>List of MuggleBorn students</h4>
+                    <ul id="muggleBorn"></ul>
+                </div>    
+                <div class="scroll_students">    
+                    <img src="images/scroll.png" alt="scroll">
+                    <h4>List of Unknown Blood students</h4>
+                    <ul id="unknownBlood"></ul>
+                </div>
+             </div>
+
+        </div>
+        <div class="ministry_army_order_view" style="display: none;">
+            <h3></h3>
+            <div id="book_container">
+                <img  id="open_book" src="images/Open_book-free-PNG-transparent-background-images-free-download-clipart-pics-e35dad_34ae20c5724b4c699562c4f5c6671ba9.png" alt="Big book">
+                <ul id="members"></ul>
+            </div>
+        </div>
+        </div>    
+        <div class= 'main_spells'  style="display: none;">
+            <img class='main_spells_image' src="images/book-of-shadows.png">
+            <h3>Magic Spells</h3>
+            <img class='book' src="images/Open_book-free-PNG-transparent-background-images-free-download-clipart-pics-e35dad_34ae20c5724b4c699562c4f5c6671ba9.png">
+            <h4>List of spells and their type</h4>
+            <button class="btn_spells">I solemnly swear that I am up to no good</button> 
+            <div style="display:none;" class="spells_types_list">
+                <button class='btn_spells_type' id='charm'>Charm...................................................40</button>
+                <button class='btn_spells_type' id='curse'>Curse....................................................15</button>
+                <button class='btn_spells_type' id='enchantment'>Enchantment..........................................1</button>
+                <button class='btn_spells_type' id='hex'>Hex.......................................................1</button>
+                <button class='btn_spells_type' id='jinx'>Jinx......................................................2</button>
+                <button class='btn_spells_type' id='spell'>Spell....................................................92</button>
+                <button class='btn_spells_type' id='all'>All.....................................................151</button> 
+            </div>
+            <div style='display:none;' class='spells_list_title'>
+                <p>Spell</p>
+                <p>Type</p>
+                <p>Effect</p>
+            </div>
+            <div style='display:none;' class='spells_list'>
+            </div>
+        </div>
+        <div class="main_characters" style="display:none;">
+            <h3>Characters</h3>
+            <div class="scroll">
+                    <div class="char_title"></div>
+                    <div class="char_btn" id="species">Species</div>
+                    <div class="species_list" style="display:none;">
+                        <div class="species_label">Species</div>
+                        <button class="button_species" id="human">Humans</button>
+                        <button class="button_species" id="ghost">Ghosts</button>
+                        <button class="button_species" id="creature">Creatures</button>
+                    </div>
+                    <div class="char_btn" id="role">Role</div>
+                    <div class="role_list" style="display:none;">
+                        <div class="role_label">Role</div>
+                        <button class="button_role" id="students">Students</button>
+                        <button class="button_role" id="teachers">Teachers</button>
+                    </div>
+                    <button class="back_from_category" style="display:none;">Back</button>
+                    <button class="back_from_list" style="display:none;">Back</button>
+                    <button class="next" style="display:none;">Next</button>
+                    <button class="prev" style="display:none;">Prev</button>
+                    <button class="back_from_char" style="display:none;">Back</button>
+                </div>
+        </div>
+
     </main>
     <script src="js/HarryPotterAPI.js"></script>
     <script src="js/teachers.js"></script>
+    <script src="js/houseView.js"></script>
+    <script src='js/spellsView.js'></script>
+    <script src="js/charactersView.js"></script>
+    <script src='js/hatView.js'></script>
 </body>
 </html>
